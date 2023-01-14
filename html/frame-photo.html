@@ -170,7 +170,7 @@
     <!-- ============================ photo frame ================================= -->
 
 
-    <!-- ============================ frame footer ================================= -->
+    <!-- ============================ footer ================================= -->
     <div class="footer_frame_sec fixed-bottom" style="display: none;">
         <!-- container -->
         <div class="container">
@@ -201,11 +201,13 @@
         </div>
         <!-- container -->
     </div>
-    <!-- ============================ frame footer ================================= -->
+    <!-- ============================ footer ================================= -->
+
+
 
 
     <!-- ============================ Frame Modal ================================= -->
-    <div class="offcanvs_modal frame_modal offcanvas offcanvas-bottom" tabindex="-1" id="frameModal"
+    <div class="offcanvs_modal frame_modal offcanvas offcanvas-bottom" data-bs-backdrop="true" tabindex="-1" id="frameModal"
         aria-labelledby="offcanvasExampleLabel">
         <form action="#" method="post">
             <div class="offcanvas-header">
@@ -220,8 +222,8 @@
                                 <input class="form-check-input" type="radio" name="frame" id="frameOne">
                                 <label class="form-check-label" for="frameOne">
                                     <img src="assets/images/frame/1.webp" alt="image">
-                                    <span>None</span>
                                 </label>
+                                <span>None</span>
                             </div>
                         </div>
                         <div class="col-4">
@@ -229,8 +231,8 @@
                                 <input class="form-check-input" type="radio" name="frame" id="frameTwo">
                                 <label class="form-check-label" for="frameTwo">
                                     <img src="assets/images/frame/2.webp" alt="image">
-                                    <span>White</span>
                                 </label>
+                                <span>White</span>
                             </div>
                         </div>
                         <div class="col-4">
@@ -238,8 +240,8 @@
                                 <input class="form-check-input" type="radio" name="frame" id="frameThree">
                                 <label class="form-check-label" for="frameThree">
                                     <img src="assets/images/frame/3.webp" alt="image">
-                                    <span>Black</span>
                                 </label>
+                                <span>Black</span>
                             </div>
                         </div>
                     </div>
@@ -250,6 +252,7 @@
     <!-- ============================ Frame Modal ================================= -->
 
 
+    
 
     <!-- js file -->
     <script src="assets/js/jquery.min.js"></script>

@@ -810,7 +810,7 @@ body{
   border-radius: 6px;
   height: 100%;
   position: relative;
-  padding: 5px 6px;
+  padding: 4px 4px;
   font-size: 13px;
   font-family: 'Poppins',s;
   font-weight: 500;
@@ -828,7 +828,6 @@ body{
 
 .offcanvs_modal .form-check img {
   width: 100%;
-  margin-bottom: 4px;
 }
 
 .offcanvs_modal .form-check {
@@ -840,8 +839,14 @@ body{
   opacity: 0;
 }
 
-
-
+.offcanvs_modal  .form-check span {
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-top: 2px;
+}
 
 
 
