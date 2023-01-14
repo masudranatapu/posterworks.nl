@@ -778,10 +778,6 @@ body{
   border: none !important;
 }
 
-.offcanvs_modal.offcanvas-backdrop.show{
-  opacity: 0;
-}
-
 .offcanvs_modal .offcanvas-header h5 {
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
@@ -840,8 +836,9 @@ body{
 }
 
 
-
-
+.offcanvs_modal .offcanvas-backdrop.show{
+  opacity: 0;
+}
 
 
 
