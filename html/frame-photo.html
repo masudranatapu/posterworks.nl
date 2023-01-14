@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        PosterWorks - Turn your photos into affordable, stunning wall art
+    </title>
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- fonts-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ============================ Header ================================= -->
+    <header class="header_section section sticky-top">
+        <!-- container-fluid -->
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-4">
+                    <!-- offcanvas menu -->
+                    <div class="sidebar_menu">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                                    </a>
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="offcanvas_menu">
+                                    <div class="header">
+                                        <p>
+                                            <strong>Sign Up</strong>
+                                            to save your progress & track orders
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Sign up / Sign in</a>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="frame-photo.html">
+                                                <img src="assets/images/icons/frame.svg" alt="icon" />
+                                                <span>Frame Your Photos</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="buy-gift.html">
+                                                <img src="assets/images/icons/gift.svg" alt="icon" />
+                                                <span>Buy a Gift Card</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- offcanvas menu -->
+                </div>
+                <div class="col-4">
+                    <!-- logo -->
+                    <div class="logo text-center">
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                        </a>
+                    </div>
+                    <!-- logo -->
+                </div>
+                <div class="col-4">
+                    <!-- chat icon -->
+                    <div class="chat_icon float-end">
+                        <a href="#">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 32px; height: 32px; color: rgb(43, 5, 20);">
+                                <path
+                                    d="M12.0002 16.0999C12.7402 16.0999 13.3402 15.5 13.3402 14.7599C13.3402 14.0199 12.7402 13.4199 12.0002 13.4199C11.2601 13.4199 10.6602 14.0199 10.6602 14.7599C10.6602 15.5 11.2601 16.0999 12.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M15.9801 16.0999C16.7202 16.0999 17.3201 15.5 17.3201 14.7599C17.3201 14.0199 16.7202 13.4199 15.9801 13.4199C15.2401 13.4199 14.6401 14.0199 14.6401 14.7599C14.6401 15.5 15.2401 16.0999 15.9801 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M20.0002 16.0999C20.7402 16.0999 21.3402 15.5 21.3402 14.7599C21.3402 14.0199 20.7402 13.4199 20.0002 13.4199C19.2601 13.4199 18.6602 14.0199 18.6602 14.7599C18.6602 15.5 19.2601 16.0999 20.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M22.59 20.44H11.15L9.06 23.02C8.66 23.4 8 23.12 8 22.18L8.04 10.02C8.04 9.63 8.67 9 9.45 9H22.63C23.41 9 24 9.62 24 10.4V19.04C24 19.82 23.37 20.45 22.59 20.45V20.44Z"
+                                    stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- chat icon -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container-fluid -->
+    </header>
+
+    <!-- ============================ photo frame ================================= -->
+    <div class="photo_frame_sec">
+        <!-- container -->
+        <div class="container">
+            <!-- show frame design -->
+            <div class="frame_design" style="display: none;">
+                <img id="output" src="assets/images/reviews/2.jpg" class="img-fluid" alt="image">
+                <svg shape-rendering="geometricPrecision" style="height: 370.105px; width: 367.579px;">
+                    <path
+                        d="M360,0 L360,360 L367.57894736842104,370.10526315789474 L367.57894736842104,10.105263157894736 Z"
+                        fill="#4D4D4D"></path>
+                    <path
+                        d="M0,360 L7.578947368421052,370.10526315789474 L367.57894736842104,370.10526315789474 L360,360 Z"
+                        fill="#333333"></path>
+                </svg>
+
+                <!-- delete & update photo -->
+                <div class="frame_group_btn mt-4">
+                    <!-- delete btn -->
+                    <button class="btn btn-danger delete_img me-4"><i class="fa fa-trash"></i></button>
+                    <!-- update photo btn -->
+                    <form action="#" method="post" class="mb-3" enctype="multipart/form-data">
+                        <label for="photo"><i class="fa fa-plus"></i></label>
+                        <input type="file" name="photo" onchange="loadFile(event)" id="photo" hidden>
+                    </form>
+                </div>
+                <!-- delete & update photo -->
+            </div>
+            <!-- show frame design -->
+
+            <!-- upload photo -->
+            <div class="upload_photo text-center">
+                <form action="#" method="post" class="mb-3" enctype="multipart/form-data">
+                    <label for="photo"><i class="fa fa-plus"></i></label>
+                    <input type="file" name="photo" onchange="loadFile(event)" id="photo" hidden>
+                </form>
+                <p>Pick some photos <br /> to get started</p>
+            </div>
+            <!-- upload photo -->
+
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ photo frame ================================= -->
+
+
+    <!-- ============================ frame footer ================================= -->
+    <div class="footer_frame_sec fixed-bottom" style="display: none;">
+        <!-- container -->
+        <div class="container">
+            <div class="frame_nav text-center">
+                <ul>
+                    <li>
+                        <a data-bs-toggle="offcanvas" href="#frameModal" role="button" aria-controls="offcanvasExample">
+                            <img src="assets/images/icons/frame-2.svg" alt="frame">
+                            Frame
+                        </a>
+                        <a href="#">
+                            <img src="assets/images/icons/filter.svg" alt="filter">
+                            Filter
+                        </a>
+                        <a href="#">
+                            <img src="assets/images/icons/mat.svg" alt="mat">
+                            Mat
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- checkout -->
+                <div class="ceckout_btn text-center mt-4">
+                    <a href="#" class="btn btn-primary rounded">Checkout</a>
+                </div>
+                <!-- checkout -->
+            </div>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ frame footer ================================= -->
+
+
+    <!-- ============================ Frame  Modal ================================= -->
+    <div class="offcanvs_modal frame_modal offcanvas offcanvas-bottom" tabindex="-1" id="frameModal"
+        aria-labelledby="offcanvasExampleLabel">
+        <form action="#" method="post">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Select Frame</h5>
+                <button type="submit" class="text-primary">Done</button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="dropdown">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frame" id="frameOne">
+                                <label class="form-check-label" for="frameOne">
+                                    <img src="assets/images/frame/1.webp" alt="image">
+                                    <span>None</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frame" id="frameTwo">
+                                <label class="form-check-label" for="frameTwo">
+                                    <img src="assets/images/frame/2.webp" alt="image">
+                                    <span>White</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frame" id="frameThree">
+                                <label class="form-check-label" for="frameThree">
+                                    <img src="assets/images/frame/3.webp" alt="image">
+                                    <span>Black</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ============================ Frame  Modal ================================= -->
+
+
+
+    <!-- js file -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        var loadFile = function (event) {
+            // show frame photo
+            var image = ('#output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            $('.frame_design').fadeIn();
+
+            // show footer frame desgin section
+            $('.footer_frame_sec').fadeIn();
+
+            // hide upload photo field
+            $('.upload_photo').fadeOut();
+        };
+
+        $('.delete_img').on('click', function () {
+            var image = ('#output');
+            image.src = '';
+        });
+    </script>
+</body>
+
+</html>

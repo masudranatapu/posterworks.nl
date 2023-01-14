@@ -1,3 +1,13 @@
+@media screen and (min-width:1200px) {
+    .reviews_section .owl-carousel .owl-nav button.owl-next, .reviews_section .owl-carousel .owl-nav button.owl-prev {
+        width: 258px;
+      }
+     .gift_card_content {
+        padding: 0px 122px;
+    }
+}
+
+
 @media screen and (min-width: 576px) {
     .container-fluid {
         padding: 0px 50px;
@@ -10,7 +20,6 @@
     }
 }
 
-
 @media screen and (max-width:575px) {
     .banner_content h1 {
         font-size: 42px;
@@ -20,12 +29,18 @@
         font-size: 27px;
         line-height: 36px;
     }
+    .gift_card_content {
+        padding: 0px 0px;
+    }
 }
 
 
 @media screen and (max-width:500px) {
     .banner_content h1 {
         font-size: 32px;
+    }
+    .reviews_section .owl-carousel .owl-nav button.owl-next, .reviews_section .owl-carousel .owl-nav button.owl-prev{
+         background: none !important;
     }
 }
 

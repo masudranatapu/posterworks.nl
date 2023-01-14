@@ -2,206 +2,511 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PosterWorks - Turn your photos into affordable, stunning wall art</title>
-    <link rel="icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        PosterWorks - Turn your photos into affordable, stunning wall art
+    </title>
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- fonts-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-<!-- ============================ Header ================================= -->
-<header class="header_section section sticky-top">
-    <!-- container-fluid -->
-    <div class="container-fluid">
-        <!-- row -->
-        <div class="row">
-            <div class="col-4">
-                <!-- offcanvas menu -->
-                <div class="sidebar_menu">
-                    <a data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </a>
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                                <a href="index.html">
-                                    <img src="assets/images/logo.png" class="img-fluid" alt="logo">
-                                </a>
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div class="offcanvas_menu">
-                                <div class="header">
-                                    <p><strong>Sign Up</strong> to save your progress & track orders</p>
-                                    <a href="#" class="btn btn-primary">Sign up / Sign in</a>
+    <!-- ============================ Header ================================= -->
+    <header class="header_section section sticky-top">
+        <!-- container-fluid -->
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-4">
+                    <!-- offcanvas menu -->
+                    <div class="sidebar_menu">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                                    </a>
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="offcanvas_menu">
+                                    <div class="header">
+                                        <p>
+                                            <strong>Sign Up</strong>
+                                            to save your progress & track orders
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Sign up / Sign in</a>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="frame-photo.html">
+                                                <img src="assets/images/icons/frame.svg" alt="icon" />
+                                                <span>Frame Your Photos</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="buy-gift.html">
+                                                <img src="assets/images/icons/gift.svg" alt="icon" />
+                                                <span>Buy a Gift Card</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- offcanvas menu -->
+                </div>
+                <div class="col-4">
+                    <!-- logo -->
+                    <div class="logo text-center">
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                        </a>
+                    </div>
+                    <!-- logo -->
+                </div>
+                <div class="col-4">
+                    <!-- chat icon -->
+                    <div class="chat_icon float-end">
+                        <a href="#">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 32px; height: 32px; color: rgb(43, 5, 20);">
+                                <path
+                                    d="M12.0002 16.0999C12.7402 16.0999 13.3402 15.5 13.3402 14.7599C13.3402 14.0199 12.7402 13.4199 12.0002 13.4199C11.2601 13.4199 10.6602 14.0199 10.6602 14.7599C10.6602 15.5 11.2601 16.0999 12.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M15.9801 16.0999C16.7202 16.0999 17.3201 15.5 17.3201 14.7599C17.3201 14.0199 16.7202 13.4199 15.9801 13.4199C15.2401 13.4199 14.6401 14.0199 14.6401 14.7599C14.6401 15.5 15.2401 16.0999 15.9801 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M20.0002 16.0999C20.7402 16.0999 21.3402 15.5 21.3402 14.7599C21.3402 14.0199 20.7402 13.4199 20.0002 13.4199C19.2601 13.4199 18.6602 14.0199 18.6602 14.7599C18.6602 15.5 19.2601 16.0999 20.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M22.59 20.44H11.15L9.06 23.02C8.66 23.4 8 23.12 8 22.18L8.04 10.02C8.04 9.63 8.67 9 9.45 9H22.63C23.41 9 24 9.62 24 10.4V19.04C24 19.82 23.37 20.45 22.59 20.45V20.44Z"
+                                    stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- chat icon -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container-fluid -->
+    </header>
+    <!-- ============================ Banner ================================= -->
+    <div class="banner section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-7 order-lg-2">
+                    <div class="banner_content text-center text-lg-start">
+                        <h1>Turn your photos into stunning wall art</h1>
+                        <p>
+                            Design beautiful walls filled with memories
+                            <br />
+                            using your favorite photos
+                        </p>
+                        <a href="#" class="btn btn-primary rounded">Let's Go</a>
+                        <p>
+                            <img src="assets/images/icons/plan.svg" alt="image" />
+                            <strong>Free worldwide shipping!</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-1">
+                    <div class="banner_img">
+                        <img src="assets/images/banner.png" class="w-100 sm-shadow" alt="image" />
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ Featured ================================= -->
+    <div class="featured_section section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row g-3 text-center">
+                <div class="col-md-4">
+                    <div class="featured_wrapper">
+                        <div class="featured_item">
+                            <div class="featured_img mb-4">
+                                <img src="assets/images/icons/No_Nails.webp" alt="" />
+                            </div>
+                            <div class="featured_content">
+                                <h3>No nails needed</h3>
+                                <p>Our frames stick to any wall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured_wrapper">
+                        <div class="featured_item">
+                            <div class="featured_img mb-4">
+                                <img src="assets/images/icons/shipping.webp" alt="" />
+                            </div>
+                            <div class="featured_content">
+                                <h3>Free worldwide shipping!</h3>
+                                <p>At your doorstep in a week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured_wrapper">
+                        <div class="featured_item">
+                            <div class="featured_img mb-4">
+                                <img src="assets/images/icons/face_girl.webp" alt="" />
+                            </div>
+                            <div class="featured_content">
+                                <h3>Satisfaction guaranteed</h3>
+                                <p>Not satisfied? Get a full refund</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ frame banner ================================= -->
+    <div class="frame_banner section">
+        <!-- container -->
+        <div class="container">
+            <div class="frame_box">
+                <!-- row -->
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="frame_video text-center text-lg-end">
+                            <div class="ratio ratio-16x9">
+                                <iframe class="video_tag" width="100%" src="https://www.youtube.com/embed/K1PtEC_YiYo"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen autoplay="1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="frame_article ms-lg-5 text-center text-lg-start">
+                            <h3>
+                                The magic frame that
+                                <br />
+                                sticks to any surface
+                            </h3>
+                            <p>
+                                Get your photos in stylish frames that stick directly to
+                                <br />
+                                your wall and leave no damage behind!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+        <!-- container -->
+    </div>
+
+    <!-- ============================ frame banner ================================= -->
+
+    <!-- ============================ Reviews ================================= -->
+    <div class="reviews_section section">
+        <!-- container -->
+        <div class="container-fluid">
+            <!-- section heading -->
+            <div class="section_heading text-center mb-4">
+                <h3>Reviews that made our day</h3>
+                <p>We love seeing your beautiful Mixtiles walls!</p>
+            </div>
+            <!-- section heading -->
+            <div class="review_wrapper owl-carousel">
+                <!-- review itaem -->
+                <div class="item review_item">
+                    <div class="review_content">
+                        <div class="review_img mb-3">
+                            <img src="assets/images/reviews/1.jpg" class="img-fluid" alt="image" />
+                        </div>
+                        <div class="review_article">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Animi repudiandae eos nihil iure ab, hic repellat nisi quis
+                                rerum aspernatur, impedit perspiciatis totam a eius odit iste
+                                minima, ullam quae!
+                            </p>
+                            <h3>@raising.a.girl.gang</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- review item -->
+                <!-- review item -->
+                <div class="item review_item">
+                    <div class="review_content">
+                        <div class="review_img mb-3">
+                            <img src="assets/images/reviews/2.jpg" class="img-fluid" alt="image" />
+                        </div>
+                        <div class="review_article">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Animi repudiandae eos nihil iure ab, hic repellat nisi quis
+                                rerum aspernatur, impedit perspiciatis totam a eius odit iste
+                                minima, ullam quae!
+                            </p>
+                            <h3>@raising.a.girl.gang</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- review item -->
+                <!-- review item -->
+                <div class="item review_item">
+                    <div class="review_content">
+                        <div class="review_img mb-3">
+                            <img src="assets/images/reviews/3.jpg" class="img-fluid" alt="image" />
+                        </div>
+                        <div class="review_article">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Animi repudiandae eos nihil iure ab, hic repellat nisi quis
+                                rerum aspernatur, impedit perspiciatis totam a eius odit iste
+                                minima, ullam quae!
+                            </p>
+                            <h3>@raising.a.girl.gang</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- review item -->
+                <!-- review item -->
+                <div class="item review_item">
+                    <div class="review_content">
+                        <div class="review_img mb-3">
+                            <img src="assets/images/reviews/4.jpg" class="img-fluid" alt="image" />
+                        </div>
+                        <div class="review_article">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Animi repudiandae eos nihil iure ab, hic repellat nisi quis
+                                rerum aspernatur, impedit perspiciatis totam a eius odit iste
+                                minima, ullam quae!
+                            </p>
+                            <h3>@raising.a.girl.gang</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- review item -->
+                <!-- review item -->
+                <div class="item review_item">
+                    <div class="review_content">
+                        <div class="review_img mb-3">
+                            <img src="assets/images/reviews/5.jpg" class="img-fluid" alt="image" />
+                        </div>
+                        <div class="review_article">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Animi repudiandae eos nihil iure ab, hic repellat nisi quis
+                                rerum aspernatur, impedit perspiciatis totam a eius odit iste
+                                minima, ullam quae!
+                            </p>
+                            <h3>@raising.a.girl.gang</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- review item -->
+            </div>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ Reviews ================================= -->
+
+    <!-- ============================ video ================================= -->
+    <div class="video_section section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="video_wrapper text-center" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    style="background-image: url('assets/images/banner.png');">
+                    <div class="position-relative">
+                        <h3>Every year, millions of people <br /> choose PosterWorks</h3>
+                        <button type="button" class="btn btn-primary rounded">Watch the video</button>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+
+                <!-- Video Modal -->
+                <div class="video_modal modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/K1PtEC_YiYo" title="YouTube video" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Video Modal -->
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ video ================================= -->
+
+    <!-- ============================ footer ================================= -->
+    <footer class="footer_section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row g-4">
+                <!-- about us -->
+                 <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>About us</h3>
+                        </div>
+                        <div class="footer_link">
+                            <ul>
+                                <li><a href="#">Frequent Questions</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Accessibility Statement</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- follow -->
+                 <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>Follow Us</h3>
+                        </div>
+                        <div class="footer_link">
+                            <ul>
+                                <li><a href="#" target="_blank">Facebook</a></li>
+                                <li><a href="#" target="_blank">Twitter</a></li>
+                                <li><a href="#" target="_blank">Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- need help -->
+                 <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>Need some help?</h3>
+                        </div>
+                        <div class="footer_article">
+                             <p>Talk to someone from our real support  <br /> team, live 24/7</p>
+                             <a href="#" class="btn btn-primary rounded">Chat with Us</a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <!-- row -->
+
+
+            <!-- footer bottom -->
+            <div class="footer_bottom text-md-center">
+                <!-- row -->
+                <div class="row g-3 d-flex align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright_text text-center float-md-start">
+                            <p>&copy; Copyright 2023 PosterWorks, LTD</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center float-md-end">
+                            <div class="footer_bottom_link">
                                 <ul>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/icons/frame.svg" alt="icon">
-                                            <span>Frame Your Photos</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/images/icons/gift.svg" alt="icon">
-                                            <span>Buy a Gift Card</span>
-                                        </a>
-                                    </li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Tearm & Conditions</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- offcanvas menu -->
+                <!-- row -->
             </div>
-            <div class="col-4">
-                <!-- logo -->
-                <div class="logo text-center">
-                    <a href="index.html">
-                        <img src="assets/images/logo.png" class="img-fluid" alt="logo">
-                    </a>
-                </div>
-                <!-- logo -->
-            </div>
-            <div class="col-4">
-                <!-- chat icon -->
-                <div class="chat_icon float-end">
-                    <a href="#">
-                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px; color: rgb(43, 5, 20);">
-                            <path d="M12.0002 16.0999C12.7402 16.0999 13.3402 15.5 13.3402 14.7599C13.3402 14.0199 12.7402 13.4199 12.0002 13.4199C11.2601 13.4199 10.6602 14.0199 10.6602 14.7599C10.6602 15.5 11.2601 16.0999 12.0002 16.0999Z" fill="currentColor"></path>
-                            <path d="M15.9801 16.0999C16.7202 16.0999 17.3201 15.5 17.3201 14.7599C17.3201 14.0199 16.7202 13.4199 15.9801 13.4199C15.2401 13.4199 14.6401 14.0199 14.6401 14.7599C14.6401 15.5 15.2401 16.0999 15.9801 16.0999Z" fill="currentColor"></path>
-                            <path d="M20.0002 16.0999C20.7402 16.0999 21.3402 15.5 21.3402 14.7599C21.3402 14.0199 20.7402 13.4199 20.0002 13.4199C19.2601 13.4199 18.6602 14.0199 18.6602 14.7599C18.6602 15.5 19.2601 16.0999 20.0002 16.0999Z" fill="currentColor"></path>
-                            <path d="M22.59 20.44H11.15L9.06 23.02C8.66 23.4 8 23.12 8 22.18L8.04 10.02C8.04 9.63 8.67 9 9.45 9H22.63C23.41 9 24 9.62 24 10.4V19.04C24 19.82 23.37 20.45 22.59 20.45V20.44Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path>
-                        </svg>
-                    </a>
-                </div>
-                <!-- chat icon -->
-            </div>
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container-fluid -->
-</header>
-<!-- ============================ Banner ================================= -->
-<div class="banner section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row g-3 align-items-center">
-            <div class="col-lg-7 order-lg-2">
-                <div class="banner_content text-center text-lg-start">
-                    <h1>Turn your photos into stunning wall art</h1>
-                    <p>Design beautiful walls filled with memories <br /> using your favorite photos</p>
-                    <a href="#" class="btn btn-primary">Let's Go</a>
-                    <p>
-                        <img src="assets/images/icons/plan.svg" alt="image">
-                        <strong>Free worldwide shipping!</strong>
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-5 order-lg-1">
-                <div class="banner_img">
-                    <img src="assets/images/banner.png" class="w-100 sm-shadow" alt="image">
-                </div>
-            </div>
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container -->
-</div>
-<!-- ============================ Featured ================================= -->
-<div class="featured_section section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row g-3 text-center">
-            <div class="col-md-4">
-                <div class="featured_wrapper">
-                    <div class="featured_item">
-                        <div class="featured_img mb-4">
-                            <img src="assets/images/icons/No_Nails.webp" alt="">
-                        </div>
-                        <div class="featured_content">
-                            <h3>No nails needed</h3>
-                            <p>Our frames stick to any wall</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="featured_wrapper">
-                    <div class="featured_item">
-                        <div class="featured_img mb-4">
-                            <img src="assets/images/icons/shipping.webp" alt="">
-                        </div>
-                        <div class="featured_content">
-                            <h3>Free worldwide shipping!</h3>
-                            <p>At your doorstep in a week</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="featured_wrapper">
-                    <div class="featured_item">
-                        <div class="featured_img mb-4">
-                            <img src="assets/images/icons/face_girl.webp" alt="">
-                        </div>
-                        <div class="featured_content">
-                            <h3>Satisfaction guaranteed</h3>
-                            <p>Not satisfied? Get a full refund</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container -->
-</div>
-<!-- ============================ frame banner ================================= -->
-<div class="frame_banner section">
-    <!-- container -->
-    <div class="container">
-        <div class="frame_box">
-            <!-- row -->
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="frame_video text-center text-lg-end">
-                        <video class="video-tag" autoplay muted loop="">
-                            <source src="assets/images/unbox_peel_stick.mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="frame_article ms-lg-5 text-center text-lg-start">
-                         <h3>The magic frame that <br/> sticks to any surface</h3>
-                         <p>Get your photos in stylish frames that stick directly to <br/> your wall and leave no damage behind!</p>
-                    </div>
-                </div>
-            </div>
-            <!-- row -->
-        </div>
-    </div>
-    <!-- container -->
-</div>
+            <!-- footer bottom -->
 
-<!-- ============================ frame banner ================================= -->
+        </div>
+        <!-- container -->
+    </footer>
+    <!-- ============================ footer ================================= -->
 
 
 
+    <!-- js file -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        // review carousel
+        $(".review_wrapper").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            dots: false,
+            nav: true,
+            margin: 20,
+            responsiveBaseElement: "body",
+            navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right'></i>"],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                576: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                },
+                1220: {
+                    items: 4,
+                },
+                1400: {
+                    items: 5,
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>

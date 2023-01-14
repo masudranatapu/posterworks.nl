@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        PosterWorks - Turn your photos into affordable, stunning wall art
+    </title>
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- fonts-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ============================ Header ================================= -->
+    <header class="header_section section sticky-top">
+        <!-- container-fluid -->
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-4">
+                    <!-- offcanvas menu -->
+                    <div class="sidebar_menu">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                                    </a>
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="offcanvas_menu">
+                                    <div class="header">
+                                        <p>
+                                            <strong>Sign Up</strong>
+                                            to save your progress & track orders
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Sign up / Sign in</a>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="frame-photo.html">
+                                                <img src="assets/images/icons/frame.svg" alt="icon" />
+                                                <span>Frame Your Photos</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="buy-gift.html">
+                                                <img src="assets/images/icons/gift.svg" alt="icon" />
+                                                <span>Buy a Gift Card</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- offcanvas menu -->
+                </div>
+                <div class="col-4">
+                    <!-- logo -->
+                    <div class="logo text-center">
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" class="img-fluid" width="120" alt="logo" />
+                        </a>
+                    </div>
+                    <!-- logo -->
+                </div>
+                <div class="col-4">
+                    <!-- chat icon -->
+                    <div class="chat_icon float-end">
+                        <a href="#">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 32px; height: 32px; color: rgb(43, 5, 20);">
+                                <path
+                                    d="M12.0002 16.0999C12.7402 16.0999 13.3402 15.5 13.3402 14.7599C13.3402 14.0199 12.7402 13.4199 12.0002 13.4199C11.2601 13.4199 10.6602 14.0199 10.6602 14.7599C10.6602 15.5 11.2601 16.0999 12.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M15.9801 16.0999C16.7202 16.0999 17.3201 15.5 17.3201 14.7599C17.3201 14.0199 16.7202 13.4199 15.9801 13.4199C15.2401 13.4199 14.6401 14.0199 14.6401 14.7599C14.6401 15.5 15.2401 16.0999 15.9801 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M20.0002 16.0999C20.7402 16.0999 21.3402 15.5 21.3402 14.7599C21.3402 14.0199 20.7402 13.4199 20.0002 13.4199C19.2601 13.4199 18.6602 14.0199 18.6602 14.7599C18.6602 15.5 19.2601 16.0999 20.0002 16.0999Z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M22.59 20.44H11.15L9.06 23.02C8.66 23.4 8 23.12 8 22.18L8.04 10.02C8.04 9.63 8.67 9 9.45 9H22.63C23.41 9 24 9.62 24 10.4V19.04C24 19.82 23.37 20.45 22.59 20.45V20.44Z"
+                                    stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- chat icon -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container-fluid -->
+    </header>
+
+    <!-- ============================ checkout ================================= -->
+    <div class="checkout_section section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="gift_card text-center">
+                        <div class="gift_card_bx mb-3">
+                            <img src="assets/images/gift.jpg" class="img-fluid" alt="image">
+                            <h5>3 Tiles</h5>
+                        </div>
+                        <span>Delivered by email</span>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="gift_card_content mb-5">
+                        <h2>PosterWorks Gift Card</h2>
+                        <form action="#" method="post">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Who is the gift for:</label>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Select number of tiles:</label>
+                                <strong class="mb-2 d-block">Note: Gift card tiles are always 21x21 cm.</strong>
+                                <div class="tiles_radio">
+                                    <div class="row g-1">
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift1" checked>
+                                                <label class="form-check-label" for="tilesGift1">
+                                                   <strong>3 Tiles</strong> <br />
+                                                    US $455
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift2" >
+                                                <label class="form-check-label" for="tilesGift2">
+                                                    <strong>6 Tiles</strong> <br />
+                                                    US $555
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift3">
+                                                <label class="form-check-label" for="tilesGift3">
+                                                   <strong>8 Tiles</strong> <br />
+                                                    US $765
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift4">
+                                                <label class="form-check-label" for="tilesGift4">
+                                                    <strong>12 Tiles</strong> <br />
+                                                    US $876
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift5">
+                                                <label class="form-check-label" for="tilesGift5">
+                                                    <strong>16 Tiles</strong> <br />
+                                                    US $986
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tiles" id="tilesGift6">
+                                                <label class="form-check-label" for="tilesGift6">
+                                                    <strong>20 Tiles</strong> <br />
+                                                    US $1000
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <p>
+                                    <i class="fa fa-check"></i>
+                                    Shipping Included
+                                </p>
+                            </div>
+                            <button type="submit" class="btn btn-primary rounded">Buy</button>
+                        </form>
+
+                        <!-- how it work -->
+                        <div class="how_it_work mt-5">
+                            <h3>How does it work?</h3>
+                            <ul>
+                                <li>
+                                    <img src="assets/images/icons/tag.svg" alt="image">
+                                    1. Buy the digital gift card
+                                </li>
+                                <li>
+                                    <img src="assets/images/icons/email.svg" alt="image">
+                                    2. We send it over email to your friend or family member
+                                </li>
+                                <li>
+                                    <img src="assets/images/icons/gift-2.svg" alt="image">
+                                    3. They order Mixtiles and apply the gift code at checkout!
+                                </li>
+                            </ul>
+                            <span>Any questions? <a href="#">Contact us</a></span>
+                        </div>
+                        <!-- how it work -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- ============================ checkout ================================= -->
+
+    <!-- ============================ footer ================================= -->
+    <footer class="footer_section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row g-4">
+                <!-- about us -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>About us</h3>
+                        </div>
+                        <div class="footer_link">
+                            <ul>
+                                <li><a href="#">Frequent Questions</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Accessibility Statement</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- follow -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>Follow Us</h3>
+                        </div>
+                        <div class="footer_link">
+                            <ul>
+                                <li><a href="#" target="_blank">Facebook</a></li>
+                                <li><a href="#" target="_blank">Twitter</a></li>
+                                <li><a href="#" target="_blank">Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- need help -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-3">
+                            <h3>Need some help?</h3>
+                        </div>
+                        <div class="footer_article">
+                            <p>Talk to someone from our real support <br /> team, live 24/7</p>
+                            <a href="#" class="btn btn-primary rounded">Chat with Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+
+
+            <!-- footer bottom -->
+            <div class="footer_bottom text-md-center">
+                <!-- row -->
+                <div class="row g-3 d-flex align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright_text text-center float-md-start">
+                            <p>&copy; Copyright 2023 PosterWorks, LTD</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center float-md-end">
+                            <div class="footer_bottom_link">
+                                <ul>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Tearm & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- footer bottom -->
+
+        </div>
+        <!-- container -->
+    </footer>
+    <!-- ============================ footer ================================= -->
+
+
+    <!-- js file -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
