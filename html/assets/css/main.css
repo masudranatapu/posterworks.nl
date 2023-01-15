@@ -683,10 +683,22 @@ body{
 }
 
 .frame_design img {
-  min-width: 361px;
-  min-height: 360px !important;
+  height: 360.105px;
+  width: 360.579px;
   border-radius: 0px;
   border: 12px solid #212121;
+}
+
+.frame_design.no_frame img {
+  border: transparent !important;
+}
+
+.frame_design.white_frame img {
+  border-color:#fff !important;
+}
+
+.frame_design.black_frame img {
+  border-color:#212121 !important;
 }
 
 .frame_design svg {
@@ -765,15 +777,6 @@ body{
   background: #0d6efd21;
 }
 
-.offcanvs_modal.frame_modal {
-  max-height: 157px !important;
-  border-radius: 10px;
-  width: 279px;
-  margin: 0px auto;
-  box-shadow: rgb(0 0 0 / 12%) 0px 18px 30px -6px, rgb(0 0 0 / 2%) 0px 0px 0px 1px, rgb(0 0 0 / 4%) 0px 16px 24px 2px, rgb(0 0 0 / 2%) 0px 6px 30px 5px;
-  margin-bottom: 8px;
-}
-
 .offcanvs_modal .offcanvas.offcanvas-bottom {
   border: none !important;
 }
@@ -839,14 +842,54 @@ body{
   opacity: 0;
 }
 
-.offcanvs_modal  .form-check span {
+.offcanvs_modal .form-check span {
   text-align: center;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 2px;
 }
+
+.offcanvs_modal {
+  border-radius: 10px;
+  margin: 0px auto;
+  box-shadow: rgb(0 0 0 / 12%) 0px 18px 30px -6px, rgb(0 0 0 / 2%) 0px 0px 0px 1px, rgb(0 0 0 / 4%) 0px 16px 24px 2px, rgb(0 0 0 / 2%) 0px 6px 30px 5px;
+  margin-bottom: 8px;
+  max-height: 157px !important;
+}
+
+.offcanvs_modal.frame_modal {
+  width: 279px;
+}
+
+.offcanvs_modal.filter_modal {
+  width: 500px;
+}
+
+.mat_modal{
+  width: 300px;
+}
+
+.offcanvas-backdrop.fade.show {
+  opacity: 0;
+}
+
+.sidebar_menu .offcanvas-backdrop.fade.show {
+  opacity: 0.7 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
