@@ -155,23 +155,18 @@ body{
 
 .offcanvas_menu ul li a img {width: 31px;}
 
-.offcanvas_menu ul {
-    margin-top: 20px;
-}
-
 .offcanvas_menu ul li a {
-    display: block;
-    padding: 14px 0px;
-    border-bottom: 1px solid #f2f2f2;
-    color: var(--black);
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 14px;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
+  display: block;
+  padding: 9px 0px;
+  color: var(--black);
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
 }
 
 .offcanvas_menu ul li a:hover {
@@ -181,6 +176,8 @@ body{
 .section{
   margin-bottom:80px;
 }
+
+ 
 
 /* ================================ Banner ==================================== */
 
@@ -391,10 +388,9 @@ body{
   line-height: 46px;
 }
 
-.video_section .modal {
-  backdrop-filter: blur(4px);
-  background: linear-gradient(315deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 30%) 100%);
-  backdrop-filter: blur(4px);
+.modal {
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .video_section .modal-content {
@@ -976,6 +972,146 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
+
+/* ================================  Faq  ==================================== */
+
+.faq_question_wrap .accordion-item {
+  margin-bottom: 9px;
+  border: none !important;
+}
+
+.faq_question_wrap .accordion-item button {
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #212121;
+  outline: none !important;
+  box-shadow: none !important;
+  background: #ffffff;
+  border-radius: 2px !important;
+  border: 1px solid #ececec;
+}
+
+.faq_question_wrap .section_title h5 {
+  color: #212121;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.faq_question_wrap .accordion-body {
+  padding: 30px 20px;
+}
+
+.faq_question_wrap .accordion-body p {
+  font-size: 14px;
+  line-height: 29px;
+  color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.faq_question_wrap .accordion-button:not(.collapsed) {
+  background-color: #1372ff26 !important;
+}
+
+.page_content_wrap p {
+  font-size: 15px;
+  color: #666;
+  line-height: 29px;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ================================  promo Modal  ==================================== */
+
+.modal-content {
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.modal-header {
+  padding: 0;
+  border: none !important;
+}
+
+.modal-header h1 {
+  font-size: 16px !important;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+}
+
+.modal .btn-close {
+  outline: none;
+  box-shadow: none !important;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #212121;
+  opacity: 1;
+}
+
+.modal-content .form-label {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+}
+
+.modal-content .form-control {
+  height: 49px;
+  border: 1px solid #939393;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  box-shadow: none !important;
+}
+
+.offcanvas_menu .header img {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 18px;
+  width: 50px;
+  height: 50px;
+}
+
+.offcanvas_menu .header .user_info h5 {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.offcanvas_menu .header .user_info a {
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

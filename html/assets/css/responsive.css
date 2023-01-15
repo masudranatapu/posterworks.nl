@@ -12,6 +12,9 @@
     .container-fluid {
         padding: 0px 50px;
     }
+    .modal-body {
+        padding: 30px;
+    }
 }
 
 @media screen and (max-width:1200px) {

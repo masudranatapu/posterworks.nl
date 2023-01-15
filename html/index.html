@@ -48,7 +48,7 @@
                             </svg>
                         </a>
                         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
-                            aria-labelledby="offcanvasExampleLabel">
+                            aria-labelledby="staticBackdropLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                     <a href="index.html">
@@ -61,6 +61,15 @@
                             <div class="offcanvas-body">
                                 <div class="offcanvas_menu">
                                     <div class="header">
+                                        <!-- login user profile  * remove d-none class * -->
+                                        <div class="d-flex position-relative align-items-center d-none">
+                                            <img src="assets/images/default-user.png" width="50" alt="image">
+                                            <div class="user_info">
+                                                <h5>Rabin Mia</h5>
+                                                <a href="#" class="text-danger">Logout</a>
+                                            </div>
+                                        </div>
+                                        <!-- login user profile  -->
                                         <p>
                                             <strong>Sign Up</strong>
                                             to save your progress & track orders
@@ -78,6 +87,44 @@
                                             <a href="buy-gift.html">
                                                 <img src="assets/images/icons/gift.svg" alt="icon" />
                                                 <span>Buy a Gift Card</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                data-bs-target="#promocodeModal">
+                                                <img src="assets/images/icons/promo_code.svg" alt="icon" />
+                                                <span>Change Promo Code</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="my-order.html">
+                                                <img src="assets/images/icons/orders.svg" alt="icon" />
+                                                <span>My Orders</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html">
+                                                <img src="assets/images/icons/faq.svg" alt="icon" />
+                                                <span>Frequent Questions</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="assets/images/icons/chat.svg" alt="icon" />
+                                                <span>Chat with us</span>
+                                            </a>
+                                        </li>
+                                        <div class="mt-2 mb-2">
+                                            <hr>
+                                        </div>
+                                        <li class="ps-1">
+                                            <a href="privacy-policy.html">
+                                                <span>Privacy Policy</span>
+                                            </a>
+                                        </li>
+                                        <li class="ps-1">
+                                            <a href="terms-condition.html">
+                                                <span>Terms & Conditons</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -99,7 +146,7 @@
                 <div class="col-4">
                     <!-- chat icon -->
                     <div class="chat_icon float-end">
-                        <a href="#">
+                        <a href="javascript:void(0)">
                             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 style="width: 32px; height: 32px; color: rgb(43, 5, 20);">
                                 <path
@@ -124,6 +171,33 @@
         </div>
         <!-- container-fluid -->
     </header>
+
+    <!-- ============================ Change Promo Code Modal ================================= -->
+    <div class="modal fade" id="promocodeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Promo Code</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="promo_code" class="form-label">Your Code</label>
+                            <input type="text" name="promo_code" id="promo_code" class="form-control"
+                                placeholder="Enter here..." required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Change Promo Code Modal ================================= -->
+
+
     <!-- ============================ Banner ================================= -->
     <div class="banner section">
         <!-- container -->
@@ -252,7 +326,7 @@
             <!-- section heading -->
             <div class="section_heading text-center mb-4">
                 <h3>Reviews that made our day</h3>
-                <p>We love seeing your beautiful Mixtiles walls!</p>
+                <p>We love seeing your beautiful PosterWorks walls!</p>
             </div>
             <!-- section heading -->
             <div class="review_wrapper owl-carousel">
@@ -404,9 +478,10 @@
                         </div>
                         <div class="footer_link">
                             <ul>
-                                <li><a href="#">Frequent Questions</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Accessibility Statement</a></li>
+                                <li><a href="buy-gift.html">Buy a Gift Card</a></li>
+                                <li><a href="signin.html">Sign In</a></li>
+                                <li><a href="signup.html">Sign Up</a></li>
+                                <li><a href="faq.html">Faq</a></li>
                             </ul>
                         </div>
                     </div>
@@ -422,6 +497,7 @@
                                 <li><a href="#" target="_blank">Facebook</a></li>
                                 <li><a href="#" target="_blank">Twitter</a></li>
                                 <li><a href="#" target="_blank">Linkedin</a></li>
+                                <li><a href="#" target="_blank">Whatsapp</a></li>
                             </ul>
                         </div>
                     </div>
@@ -441,7 +517,6 @@
             </div>
             <!-- row -->
 
-
             <!-- footer bottom -->
             <div class="footer_bottom text-md-center">
                 <!-- row -->
@@ -455,8 +530,8 @@
                         <div class="text-center float-md-end">
                             <div class="footer_bottom_link">
                                 <ul>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Tearm & Conditions</a></li>
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="terms-condition.html">Tearm & Conditions</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -470,7 +545,6 @@
         <!-- container -->
     </footer>
     <!-- ============================ footer ================================= -->
-
 
 
     <!-- js file -->
@@ -508,6 +582,19 @@
             },
         });
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/63c3f21cc2f1ac1e202daf4b/1gmqmjg19';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 
 </html>

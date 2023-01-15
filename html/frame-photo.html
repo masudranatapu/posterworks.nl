@@ -46,9 +46,8 @@
                                 <line x1="3" y1="18" x2="21" y2="18"></line>
                             </svg>
                         </a>
-                        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1"
-                            id="offcanvasMenu" aria-labelledby="staticBackdropLabel">
-
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu"
+                            aria-labelledby="staticBackdropLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                     <a href="index.html">
@@ -78,6 +77,44 @@
                                             <a href="buy-gift.html">
                                                 <img src="assets/images/icons/gift.svg" alt="icon" />
                                                 <span>Buy a Gift Card</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                data-bs-target="#promocodeModal">
+                                                <img src="assets/images/icons/promo_code.svg" alt="icon" />
+                                                <span>Change Promo Code</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="my-order.html">
+                                                <img src="assets/images/icons/orders.svg" alt="icon" />
+                                                <span>My Orders</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html">
+                                                <img src="assets/images/icons/faq.svg" alt="icon" />
+                                                <span>Frequent Questions</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="assets/images/icons/chat.svg" alt="icon" />
+                                                <span>Chat with us</span>
+                                            </a>
+                                        </li>
+                                        <div class="mt-2 mb-2">
+                                            <hr>
+                                        </div>
+                                        <li class="ps-1">
+                                            <a href="privacy-policy.html">
+                                                <span>Privacy Policy</span>
+                                            </a>
+                                        </li>
+                                        <li class="ps-1">
+                                            <a href="terms-condition.html">
+                                                <span>Terms & Conditons</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -124,6 +161,31 @@
         </div>
         <!-- container-fluid -->
     </header>
+
+    <!-- ============================ Change Promo Code Modal ================================= -->
+    <div class="modal fade" id="promocodeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Promo Code</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="promo_code" class="form-label">Your Code</label>
+                            <input type="text" name="promo_code" id="promo_code" class="form-control"
+                                placeholder="Enter here..." required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Change Promo Code Modal ================================= -->
 
     <!-- ============================ photo frame ================================= -->
     <div class="photo_frame_sec">
