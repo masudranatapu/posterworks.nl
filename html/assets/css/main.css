@@ -693,6 +693,10 @@ body{
   border: transparent !important;
 }
 
+.frame_design.white_frame {
+  box-shadow: 1px 2px 3px rgb(0 0 0 / 40%) !important;
+}
+
 .frame_design.white_frame img {
   border-color:#fff !important;
 }
@@ -880,12 +884,98 @@ body{
 }
 
 
+/* ================================  SignIn  ==================================== */
+
+.signin_sec{
+  position: absolute;
+  top:50%;
+  left:0;
+  right:0;
+  margin:0 auto;
+  transform: translate(0, -50%);
+}
+
+.signin_form{
+  box-shadow: 0 4px 11px rgb(0 0 0 / 13%) !important;
+}
+
+.signin_form .form-control {
+  height: 50px;
+  background: #eeeeee !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  border-radius: 2px;
+}
+
+.signin_form .form-label {
+  font-size: 14px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 500;
+  color: #212121;
+}
+
+.signin_form .social_auth a {
+  background: #ffffff;
+  border-radius: 50px;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 11px;
+  line-height: 48px;
+  outline: none;
+  color: #fff;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: rgb(99 99 99 / 10%) 0px 2px 8px 0px;
+  border: 1px solid #e6e6e6;
+}
+
+.signin_sec .btn-primary {
+  border-radius: 0px;
+  font-size: 18px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  padding: 13px 0px;
+}
 
 
+.signin_sec .divider {
+  position: relative;
+}
 
+.signin_sec .divider:before {
+  position: absolute;
+  content: "";
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+}
 
+.divider span {
+  color: #BBB;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #fff;
+  padding: 0px 21px;
+  position: relative;
+}
 
-
+.create_account p {
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
 
 
 

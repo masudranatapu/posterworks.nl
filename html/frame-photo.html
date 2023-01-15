@@ -65,7 +65,7 @@
                                             <strong>Sign Up</strong>
                                             to save your progress & track orders
                                         </p>
-                                        <a href="#" class="btn btn-primary">Sign up / Sign in</a>
+                                        <a href="signin.html" class="btn btn-primary">Sign up / Sign in</a>
                                     </div>
                                     <ul>
                                         <li>
@@ -147,10 +147,10 @@
                 <div class="white_shadow d-none">
                     <svg shape-rendering="geometricPrecision" style="height: 100%; width: 100%;">
                         <path
-                            d="M240,0 L240,240 L247.57894736842104,250.10526315789474 L247.57894736842104,10.105263157894736 Z"
+                            d="M360,0 L360,360 L367.57894736842104,370.10526315789474 L367.57894736842104,10.105263157894736 Z"
                             fill="#bfbfbf"></path>
                         <path
-                            d="M0,240 L7.578947368421052,250.10526315789474 L247.57894736842104,250.10526315789474 L240,240 Z"
+                            d="M0,360 L7.578947368421052,370.10526315789474 L367.57894736842104,370.10526315789474 L360,360 Z"
                             fill="#808080"></path>
                     </svg>
                 </div>
@@ -400,9 +400,6 @@
     <!-- ============================ Mat Modal End ================================= -->
 
 
-
-
-
     <!-- js file -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -439,6 +436,7 @@
                 // remove class
                 $('.frame_design').removeClass('black_frame')
                 $('.frame_design').removeClass('white_frame')
+
             } else if ($(this).val() == 'white') {
                 // add white frame
                 $('.frame_design').addClass('white_frame')
@@ -448,6 +446,7 @@
                 // remove class
                 $('.frame_design').removeClass('black_frame')
                 $('.frame_design').removeClass('no_frame')
+
             } else if ($(this).val() == 'black') {
                 // add black frame
                 $('.frame_design').addClass('black_frame')
