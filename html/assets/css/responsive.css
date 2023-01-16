@@ -45,6 +45,13 @@
     .reviews_section .owl-carousel .owl-nav button.owl-next, .reviews_section .owl-carousel .owl-nav button.owl-prev{
          background: none !important;
     }
+     
+}
+
+@media screen and (max-width:400px) {
+    .frame_design {
+        margin: 20px 20px auto;
+    }
 }
 
 @media screen and (max-width:380px) {

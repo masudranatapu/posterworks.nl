@@ -105,6 +105,7 @@ body{
     padding: 18px 0px;
     vertical-align: middle;
     background: #FBF9F9;
+    z-index: 0;
     border-bottom: 1px solid #f5f5f5;
 }
 
@@ -113,12 +114,20 @@ body{
     border: none !important;
 }
 
-.header_section .offcanvas .btn-close {
+.offcanvas .btn-close {
     outline: none !important;
     box-shadow: none !important;
     border: 1px solid #cecece;
     border-radius: 50px;
     font-size: 12px;
+}
+
+.offcanvas-title {
+  font-size: 18px;
+  font-family: 'Poppins',s;
+  font-weight: 400;
+  color: #212121;
+  margin: 0;
 }
 
 .header_section .offcanvas-header {
@@ -139,7 +148,7 @@ body{
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    padding: 9px 22px;
+    padding: 12px 22px;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -174,7 +183,7 @@ body{
 }
 
 .section{
-  margin-bottom:80px;
+  margin-bottom:50px;
 }
 
  
@@ -389,7 +398,7 @@ body{
 }
 
 .modal {
-  backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px); */
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -615,12 +624,13 @@ body{
   color: #666;
 }
 
-.upload_photo{
+.upload_photo {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   left: 0;
   right: 0;
+  z-index: -1;
 }
 
 .upload_photo p {
@@ -676,6 +686,7 @@ body{
   transform: translate(0, -50%);
   left: 0;
   right: 0;
+  z-index:-1;
 }
 
 .frame_design img {
@@ -743,6 +754,7 @@ body{
 .footer_frame_sec {
   background: #fff;
   padding: 16px 0px;
+  z-index: -1 !important;
 }
 
 .ceckout_btn a {
@@ -1090,6 +1102,169 @@ body{
   font-weight: 400;
   font-size: 15px;
 }
+
+/* ================================  Checkout  ==================================== */
+
+.checkout_form .form-control {
+  height: 50px;
+  font-size: 14px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  border: 1px solid #f3f3f3;
+  background: #f4f4f4;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.checkout_form .form-control::placeholder {
+  color: #CCC;
+}
+
+.checkout_form .form-label {
+  font-size: 14px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 500;
+}
+
+.checkout_form, .cart_wrap{
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 9px;
+}
+
+.cart_info h5 {
+  font-size: 16px;
+  font-family: 'Poppins',s;
+  margin: 0;
+}
+
+.cart_info span {
+  color: var(--primary);
+  font-size: 14px;
+  font-family:
+  'Poppins';
+  font-weight: 300;
+}
+
+/* .remove_cart_item{
+  transform: translate(0px, -22px);
+}
+
+.remove_cart_item a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e6e6e6;
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  padding-top: 3px;
+} */
+
+
+
+.cart_wrap table tr td {
+  border-bottom: 1px solid #f3f3f3;
+  padding: 11px 0px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+
+.select2-container {
+  height: 50px;
+  font-size: 14px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  border: 1px solid #f3f3f3;
+  background: #f4f4f4;
+  outline: none !important;
+  box-shadow: rgb(0 0 0 / 8%) 0px 1px 4px;
+  border-radius: 2px;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 45px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 47px;
+  background: #f4f4f4;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #dcd8d8;
+  height: 37px;
+  font-size: 14px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 400;
+  background: #f4f4f4;
+  outline: none !important;
+  box-shadow: rgb(0 0 0 / 8%) 0px 1px 4px;
+  border-radius: 3px;
+}
+
+.select2-container--default .select2-selection--single{
+  border:none !important;
+}
+
+.select2-dropdown {
+  border: 1px solid #ece9e9;
+}
+
+
+.iti.iti--allow-dropdown.iti--separate-dial-code {
+  display: block;
+}
+
+
+.select2-container {
+  width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
