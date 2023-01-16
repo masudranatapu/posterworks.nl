@@ -105,7 +105,6 @@ body{
     padding: 18px 0px;
     vertical-align: middle;
     background: #FBF9F9;
-    z-index: 0;
     border-bottom: 1px solid #f5f5f5;
 }
 
@@ -348,7 +347,7 @@ body{
 }
 
 .reviews_section .owl-nav .owl-next {
-  right: 0 !important;
+  right: 10px !important;
   position: absolute !important;
   background: linear-gradient(274deg,#fbf9f9 25%,hsla(0,20%,98%,0)) !important;
 }
@@ -370,7 +369,7 @@ body{
   background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 150px 0px;
+    padding: 150px 5px;
     border-radius: 10px;
     cursor: pointer;
     position: relative;

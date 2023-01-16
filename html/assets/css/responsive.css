@@ -45,6 +45,17 @@
     .reviews_section .owl-carousel .owl-nav button.owl-next, .reviews_section .owl-carousel .owl-nav button.owl-prev{
          background: none !important;
     }
+    .video_wrapper h3 {
+        font-size: 22px;
+        margin-bottom: 24px;
+        line-height: 33px;
+    }
+    .reviews_section .owl-carousel .owl-nav button.owl-next i, .reviews_section .owl-carousel .owl-nav button.owl-prev i {
+        width: 53px;
+        height: 53px;
+        line-height: 53px;
+        font-size: 16px;
+    }
      
 }
 
