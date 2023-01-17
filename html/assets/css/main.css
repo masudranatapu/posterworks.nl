@@ -87,10 +87,16 @@ textarea {
 
 
 :root {
-    --primary: #1372FF;
-    --secondary:#0558d3c7;
-    --black: #212121;
-    --white: #ffffff;
+    --bg-primary: #1372FF;
+    --bg-primary-hover:#0d58c9;
+    --bg-link-color: #212121;
+    --bg-link-hover-color: #1372FF;
+    --bg-gray-500:#666;
+    --bg-body:#FBF9F9;
+    --bg-footer:#f3f3f3;
+    --bg-border-color: #f5f5f5;
+    --bg-white-color: #ffffff;
+    
 }
 
 /* ================================ Header ==================================== */
@@ -98,14 +104,15 @@ textarea {
 body{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  background: #FBF9F9;
+  background:var(--bg-body);
+  overflow-x: hidden;
 }
 
 .header_section {
     padding: 18px 0px;
     vertical-align: middle;
-    background: #FBF9F9;
-    border-bottom: 1px solid #f5f5f5;
+    background:var(--bg-body);
+    border-bottom: var(--bg-border-color);
 }
 
 .header_section .offcanvas.offcanvas-start {
@@ -125,7 +132,7 @@ body{
   font-size: 18px;
   font-family: 'Poppins',s;
   font-weight: 400;
-  color: #212121;
+  color: var(--bg-link-color);
   margin: 0;
 }
 
@@ -135,14 +142,14 @@ body{
 
 .header_section .offcanvas_menu .header p {
     font-size: 15px;
-    color: var(--black);
+    color: var(--bg-link-color);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
 .btn-primary {
-    background: var(--primary);
-    color: #fff;
+    background: var(--bg-primary);
+    color: var(--bg-white-color);
     border: none !important;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -153,7 +160,7 @@ body{
 }
 
 .btn-primary:hover {
-    background: var(--secondary);
+    background: var(--bg-primary-hover);
 }
 
 .offcanvas_menu .header {
@@ -166,7 +173,7 @@ body{
 .offcanvas_menu ul li a {
   display: block;
   padding: 9px 0px;
-  color: var(--black);
+  color: var(--bg-link-color);
   font-family: 'Poppins';
   font-weight: 400;
   font-size: 14px;
@@ -178,7 +185,7 @@ body{
 }
 
 .offcanvas_menu ul li a:hover {
-    color: var(--primary);
+    color: var(--bg-primary-hover);
 }
 
 .section{
@@ -193,14 +200,14 @@ body{
     font-size: 68px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: var(--black);
+    color: var(--bg-link-color);
     margin-bottom: 20px;
 }
 
 .banner_content p {
     font-size: 15px;
     font-family: 'Poppins';
-    color: var(--black);
+    color: var(--bg-link-color);
     font-weight: 400;
     margin: 0;
 }
@@ -222,8 +229,8 @@ body{
 /* ================================  featured  ==================================== */
 
 .featured_section {
-    border-top: 1px solid #f5f5f5;
-    border-bottom: 1px solid #f5f5f5;
+    border-top: var(--bg-border-color);
+    border-bottom: var(--bg-border-color);
     padding: 64px 0px;
 }
 
@@ -234,7 +241,7 @@ body{
 
 .featured_content h3 {
     font-size: 16px;
-    color: var(--black);
+    color: var(--bg-link-color);
     font-weight: 600;
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -243,7 +250,7 @@ body{
 
 .featured_content p {
     font-size: 14px;
-    color: #666;
+    color: var(--bg-link-color);
     margin: 0;
 }
 
@@ -262,14 +269,14 @@ body{
     font-size: 33px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: var(--black);
+    color: var(--bg-link-color);
     margin-bottom: 14px;
     line-height: 41px;
 }
 
 .frame_article p {
     font-size: 14px;
-    color: #222;
+    color: var(--bg-link-color);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
@@ -281,13 +288,14 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-bottom: 10px;
+  color:var(--bg-link-color)
 }
 
 .section_heading p {
   margin: 0;
   font-size: 15px;
   font-family: 'Montserrat';
-  color: #222;
+  color:var(--bg-link-color)
 }
 
 .review_img img{
@@ -305,7 +313,7 @@ body{
   font-size: 13px;
   line-height: 25px;
   text-align: justify;
-  color: #888;
+  color:var(--bg-gray-500);
   font-family: 'Poppins';
   font-weight: 400;
   margin: 0;
@@ -316,7 +324,7 @@ body{
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #212121;
+  color: var(--bg-link-color)
 }
 
 .reviews_section .item{
@@ -338,7 +346,7 @@ body{
 .reviews_section .owl-carousel .owl-nav button.owl-next, .reviews_section .owl-carousel .owl-nav button.owl-prev {
   height: 100%;
   width: 50px;
-  color: var(--primary);
+  color: var(--bg-primary);
   border: unset;
   display: inline;
   justify-content: center;
@@ -347,7 +355,7 @@ body{
 }
 
 .reviews_section .owl-nav .owl-next {
-  right: 10px !important;
+  right: 0px !important;
   position: absolute !important;
   background: linear-gradient(274deg,#fbf9f9 25%,hsla(0,20%,98%,0)) !important;
 }
@@ -388,7 +396,7 @@ body{
 }
 
 .video_wrapper h3 {
-  color: #fff;
+  color: var(--bg-white-color);
   font-size: 31px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -414,7 +422,7 @@ body{
 /* ================================  Footer  ==================================== */
 
 .footer_section {
-  background: #f3f3f3;
+  background:var(--bg-footer);
   padding: 53px 0px 20px 0px;
 }
 
@@ -422,12 +430,12 @@ body{
   font-size: 16px;
   font-weight: 500;
   font-family: 'Poppins';
-  color: #212121;
+  color: var(--bg-link-color);
 }
 
 .footer_link ul li a {
   display: block;
-  color: #595959;
+  color:var(--bg-gray-500);
   padding: 6px 0px;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
@@ -439,7 +447,7 @@ body{
 }
 
 .footer_link ul li a:hover {
-  color: var(--primary);
+  color: var(--bg-primary);
 }
 
 .footer_article p {
@@ -448,6 +456,7 @@ body{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   margin-bottom: 20px;
+  color:var(--bg-gray-500);
 }
 
 .footer_bottom {
@@ -459,19 +468,19 @@ body{
 .copyright_text p {
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: var(--bg-link-color);
 }
 
 .footer_bottom_link ul li {
   display: inline-block;
   margin: 0px 10px;
-  border-right: 1px solid #DDD;
+  border-right: var(--bg-border-color);
   padding-right: 16px;
 }
 
 .footer_bottom_link ul li a {
   font-size: 13px;
-  color: #212121;
+  color: var(--bg-link-color);
   font-weight: 400;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -481,7 +490,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 .footer_bottom_link ul li a:hover {
-  color: var(--primary);
+  color: var(--bg-primary);
 }
 
 .footer_bottom_link ul li:last-child {
@@ -505,7 +514,7 @@ body{
 }
 
 .gift_card span {
-  color: var(--primary);
+  color: var(--bg-primary);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -516,7 +525,7 @@ body{
   bottom: 98px;
   left: 39px;
   font-size: 29px;
-  color: var(--primary);
+  color: var(--bg-primary);
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
@@ -524,13 +533,13 @@ body{
 .how_it_work h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #212121;
+  color: var(--bg-link-color);
   margin-bottom: 20px;
 }
 
 .how_it_work ul li {
   padding: 11px 0px;
-  color: #333;
+  color: var(--bg-gray-500);
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -546,6 +555,10 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  color:var(--bg-gray-500);
+}
+.how_it_work span a{
+  color:var(--bg-primary);
 }
 
 .gift_card_content {
@@ -555,12 +568,12 @@ body{
 .gift_card_content h2 {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
-  color: #212121;
+  color: var(--bg-link-color);
   margin-bottom: 22px;
 }
 
 .gift_card_content label {
-  color: #666;
+  color: var(--bg-gray-500);
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   display: block;
@@ -568,7 +581,7 @@ body{
 
 .gift_card_content .form-control {
   height: 50px;
-  border: 1px solid #DDD;
+  border: var(--bg-border-color);
   border-radius: 5px;
   font-size: 17px;
   font-family: 'Poppins', sans-serif;
@@ -582,6 +595,7 @@ body{
   padding: 11px 4px;
   font-size: 17px;
   font-weight: 600;
+  color:var(--bg-white-color);
 }
 
 .gift_card_content strong {
@@ -593,9 +607,9 @@ body{
 }
 
 .tiles_radio input[type="radio"]:checked+label {
-  border-color: var(--primary);
+  border-color: var(--bg-primary);
   background: #0558d314;
-  color: #212121;
+  color: var(--bg-link-color);
 }
 
 .tiles_radio label {
@@ -620,7 +634,7 @@ body{
   margin: 0;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
-  color: #666;
+  color:var(--bg-gray-500);
 }
 
 .upload_photo {
@@ -634,7 +648,7 @@ body{
 
 .upload_photo p {
   font-size: 18px;
-  color: #AAA;
+  color: var(--bg-gray-500);
   font-family: 'Poppins',sans-serif;
   font-weight: 400;
   margin: 0;
@@ -664,7 +678,7 @@ body{
 
   50% {
       transform: scale(1);
-      color:var(--primary);
+      color:var(--bg-primary);
   }
 
   to {
@@ -699,7 +713,7 @@ body{
   border: transparent !important;
 }
 
-.frame_design.white_frame {
+.frame_design.bg-_frame {
   box-shadow: 1px 2px 3px rgb(0 0 0 / 40%) !important;
 }
 
@@ -746,7 +760,7 @@ body{
   cursor: pointer;
   box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   text-align: center;
-  color: var(--primary);
+  color: var(--bg-primary);
 }
 
 
@@ -766,7 +780,7 @@ body{
   display: inline-block;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
-  color: #212121;
+  color: var(--bg-link-color);
   background: #fafafa;
   padding: 5px 13px;
   margin: 0px 7px;
@@ -797,6 +811,7 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin: 0;
+  color:var(--bg-link-color);
 }
 
 .offcanvs_modal .offcanvas-header .text-primary {
@@ -812,9 +827,9 @@ body{
 }
 
 .offcanvs_modal input[type="radio"]:checked+label {
-  border-color: var(--primary);
+  border-color: var(--bg-primary);
   background: #0558d314;
-  color: #212121;
+  color: var(--bg-link-color);
 }
 
 .offcanvs_modal label {
@@ -860,6 +875,7 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-top: 2px;
+  color:var(--bg-link-color);
 }
 
 .offcanvs_modal {
@@ -922,11 +938,11 @@ body{
   font-size: 14px;
   font-family: 'Poppins',sans-serif;
   font-weight: 500;
-  color: #212121;
+  color: var(--bg-link-color);
 }
 
 .signin_form .social_auth a {
-  background: #ffffff;
+  background:var(--bg-white-color);
   border-radius: 50px;
   width: 54px;
   height: 54px;
@@ -982,6 +998,11 @@ body{
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
+  color:var(--bg-link-color)
+}
+
+.create_account p a{
+  color:var(--bg-link-hover-color)
 }
 
 /* ================================  Faq  ==================================== */
@@ -995,16 +1016,16 @@ body{
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  color: #212121;
+  color:var(--bg-link-color);
   outline: none !important;
   box-shadow: none !important;
-  background: #ffffff;
+  background: var(--bg-white-color);
   border-radius: 2px !important;
-  border: 1px solid #ececec;
+  border: 1px solid var(--bg-border-color);
 }
 
 .faq_question_wrap .section_title h5 {
-  color: #212121;
+  color: var(--bg-link-color);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -1017,7 +1038,7 @@ body{
 .faq_question_wrap .accordion-body p {
   font-size: 14px;
   line-height: 29px;
-  color: #333;
+  color: var(--bg-link-color);
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -1029,7 +1050,7 @@ body{
 
 .page_content_wrap p {
   font-size: 15px;
-  color: #666;
+  color:var(--bg-gray-500);
   line-height: 29px;
   margin: 0;
   margin-bottom: 20px;
@@ -1058,9 +1079,9 @@ body{
   outline: none;
   box-shadow: none !important;
   font-size: 13px;
-  border: 1px solid #ddd;
+  border: var(--bg-border-color);
   border-radius: 6px;
-  color: #212121;
+  color: var(--bg-link-color);
   opacity: 1;
 }
 
@@ -1081,7 +1102,7 @@ body{
 }
 
 .offcanvas_menu .header img {
-  border: 1px solid #ddd;
+  border: var(--bg-border-color);
   border-radius: 3px;
   margin-right: 18px;
   width: 50px;
@@ -1104,6 +1125,13 @@ body{
 
 /* ================================  Checkout  ==================================== */
 
+.section_title h5 {
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Poppins',s;
+  color: var(--bg-link-color);
+}
+
 .checkout_form .form-control {
   height: 50px;
   font-size: 14px;
@@ -1122,6 +1150,7 @@ body{
   font-size: 14px;
   font-family: 'Poppins',sans-serif;
   font-weight: 500;
+  color:var(--bg-link-color);
 }
 
 .checkout_form, .cart_wrap{
@@ -1135,10 +1164,11 @@ body{
   font-size: 16px;
   font-family: 'Poppins',s;
   margin: 0;
+  color:var(--bg-link-color);
 }
 
 .cart_info span {
-  color: var(--primary);
+  color: var(--bg-primary);
   font-size: 14px;
   font-family:
   'Poppins';
@@ -1167,6 +1197,7 @@ body{
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
+  color:var(--bg-link-color);
 }
 
 
