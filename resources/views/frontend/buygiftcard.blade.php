@@ -22,7 +22,7 @@
                 <div class="col-lg-5">
                     <div class="gift_card text-center">
                         <div class="gift_card_bx mb-3">
-                            <img src="{{ asset('frontend/images/gift.jpg') }}" class="img-fluid" alt="image">
+                            <img src="{{ asset('assets/images/gift.jpg') }}" class="img-fluid" alt="image">
                             <h5>3 Tiles</h5>
                         </div>
                         <span>Delivered by email</span>
@@ -118,15 +118,15 @@
                             <h3>How does it work?</h3>
                             <ul>
                                 <li>
-                                    <img src="{{ asset('frontend/images/icons/tag.svg') }}" alt="image">
+                                    <img src="{{ asset('assets/images/icons/tag.svg') }}" alt="image">
                                     1. Buy the digital gift card
                                 </li>
                                 <li>
-                                    <img src="{{ asset('frontend/images/icons/email.svg') }}" alt="image">
+                                    <img src="{{ asset('assets/images/icons/email.svg') }}" alt="image">
                                     2. We send it over email to your friend or family member
                                 </li>
                                 <li>
-                                    <img src="{{ asset('frontend/images/icons/gift-2.svg') }}" alt="image">
+                                    <img src="{{ asset('assets/images/icons/gift-2.svg') }}" alt="image">
                                     3. They order Mixtiles and apply the gift code at checkout!
                                 </li>
                             </ul>

@@ -1,6 +1,4 @@
-@if(Route::is('frame.photo'))
 
-@else
     <div class="container">
         <!-- row -->
         <div class="row">
@@ -22,7 +20,7 @@
                                 @endif
                             @endauth
                             <li><a href="{{ route('faq') }}">Faq</a></li>
-                            <li><a href="{{ route('frame.photo') }}">Frame Photo</a></li>
+                            <li><a href="{{ route('photos') }}">Frame Photo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,4 +78,4 @@
             <!-- row -->
         </div>
     </div>
-@endif
+

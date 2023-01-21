@@ -28,16 +28,16 @@
                             <br />
                             using your favorite photos
                         </p>
-                        <a href="#" class="btn btn-primary rounded">Let's Go</a>
+                        <a href="{{ route('photos') }}" class="btn btn-primary rounded">Let's Go</a>
                         <p>
-                            <img src="{{ asset('frontend/images/icons/plan.svg') }}" alt="image" />
+                            <img src="{{ asset('assets/images/icons/plan.svg') }}" alt="image" />
                             <strong>Free worldwide shipping!</strong>
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-5 order-lg-1">
                     <div class="banner_img">
-                        <img src="{{ asset('frontend/images/banner.png') }}" class="w-100 sm-shadow" alt="image" />
+                        <img src="{{ asset('assets/images/banner.png') }}" class="w-100 sm-shadow" alt="image" />
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     <div class="featured_wrapper mb-3 mb-md-0">
                         <div class="featured_item">
                             <div class="featured_img mb-4">
-                                <img src="{{ asset('frontend/images/icons/No_Nails.webp') }}" alt="" />
+                                <img src="{{ asset('assets/images/icons/No_Nails.webp') }}" alt="" />
                             </div>
                             <div class="featured_content">
                                 <h3>No nails needed</h3>
@@ -68,7 +68,7 @@
                     <div class="featured_wrapper mb-3 mb-md-0">
                         <div class="featured_item">
                             <div class="featured_img mb-4">
-                                <img src="{{ asset('frontend/images/icons/shipping.webp') }}" alt="" />
+                                <img src="{{ asset('assets/images/icons/shipping.webp') }}" alt="" />
                             </div>
                             <div class="featured_content">
                                 <h3>Free worldwide shipping!</h3>
@@ -81,7 +81,7 @@
                     <div class="featured_wrapper mb-3 mb-md-0">
                         <div class="featured_item">
                             <div class="featured_img mb-4">
-                                <img src="{{ asset('frontend/images/icons/face_girl.webp') }}" alt="" />
+                                <img src="{{ asset('assets/images/icons/face_girl.webp') }}" alt="" />
                             </div>
                             <div class="featured_content">
                                 <h3>Satisfaction guaranteed</h3>
@@ -148,7 +148,7 @@
                 <div class="item review_item">
                     <div class="review_content">
                         <div class="review_img mb-3">
-                            <img src="{{ asset('frontend/images/reviews/1.jpg') }}" class="img-fluid" alt="image" />
+                            <img src="{{ asset('assets/images/reviews/1.jpg') }}" class="img-fluid" alt="image" />
                         </div>
                         <div class="review_article">
                             <p>
@@ -166,7 +166,7 @@
                 <div class="item review_item">
                     <div class="review_content">
                         <div class="review_img mb-3">
-                            <img src="{{ asset('frontend/images/reviews/2.jpg') }}" class="img-fluid" alt="image" />
+                            <img src="{{ asset('assets/images/reviews/2.jpg') }}" class="img-fluid" alt="image" />
                         </div>
                         <div class="review_article">
                             <p>
@@ -184,7 +184,7 @@
                 <div class="item review_item">
                     <div class="review_content">
                         <div class="review_img mb-3">
-                            <img src="{{ asset('frontend/images/reviews/3.jpg') }}" class="img-fluid" alt="image" />
+                            <img src="{{ asset('assets/images/reviews/3.jpg') }}" class="img-fluid" alt="image" />
                         </div>
                         <div class="review_article">
                             <p>
@@ -202,7 +202,7 @@
                 <div class="item review_item">
                     <div class="review_content">
                         <div class="review_img mb-3">
-                            <img src="{{ asset('frontend/images/reviews/4.jpg') }}" class="img-fluid" alt="image" />
+                            <img src="{{ asset('assets/images/reviews/4.jpg') }}" class="img-fluid" alt="image" />
                         </div>
                         <div class="review_article">
                             <p>
@@ -220,7 +220,7 @@
                 <div class="item review_item">
                     <div class="review_content">
                         <div class="review_img mb-3">
-                            <img src="{{ asset('frontend/images/reviews/5.jpg') }}" class="img-fluid" alt="image" />
+                            <img src="{{ asset('assets/images/reviews/5.jpg') }}" class="img-fluid" alt="image" />
                         </div>
                         <div class="review_article">
                             <p>

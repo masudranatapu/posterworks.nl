@@ -126,7 +126,7 @@
 
                 <!-- checkout button -->
                 <div class="ceckout_btn text-center mt-4">
-                    <a href="checkout.html" class="btn btn-primary rounded">Checkout</a>
+                    <a href="{{ route('checkout') }}" class="btn btn-primary rounded">Checkout</a>
                 </div>
                 <!-- checkout button -->
 

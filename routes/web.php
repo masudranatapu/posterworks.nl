@@ -5,8 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 // admin
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\PhotoController;
 // user
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\UserDashboardController;
 
 /*
@@ -26,7 +27,7 @@ Route::get('buy-gift-card', [HomeController::class, 'buyGiftCard'])->name('buy.g
 Route::get('privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy.policy');
 Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('terms.condition');
 Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
-Route::get('frame-photo', [HomeController::class, 'framePhoto'])->name('frame.photo');
+Route::get('photos', [PhotoController::class, 'photos'])->name('photos');
 
 Auth::routes();
 

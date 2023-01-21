@@ -21,7 +21,7 @@
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid" width="120"
+                                    <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" width="120"
                                         alt="logo" />
                                 </a>
                             </h5>
@@ -33,7 +33,7 @@
                                 <div class="header">
                                     @auth
                                         <div class="d-flex position-relative align-items-center d-none">
-                                            <img src="{{ asset('frontend/images/default-user.png') }}" width="50"
+                                            <img src="{{ asset('assets/images/default-user.png') }}" width="50"
                                                 alt="image">
                                             <div class="user_info">
                                                 <h5>{{ Auth::user()->name }}</h5>
@@ -53,40 +53,40 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="{{ route('frame.photo') }}">
-                                            <img src="{{ asset('frontend/images/icons/frame.svg') }}" alt="icon" />
+                                        <a href="{{ route('photos') }}">
+                                            <img src="{{ asset('assets/images/icons/frame.svg') }}" alt="icon" />
                                             <span>Frame Your Photos</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('buy.gift.card') }}">
-                                            <img src="{{ asset('frontend/images/icons/gift.svg') }}" alt="icon" />
+                                            <img src="{{ asset('assets/images/icons/gift.svg') }}" alt="icon" />
                                             <span>Buy a Gift Card</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-bs-toggle="modal"
                                             data-bs-target="#promocodeModal">
-                                            <img src="{{ asset('frontend/images/icons/promo_code.svg') }}"
+                                            <img src="{{ asset('assets/images/icons/promo_code.svg') }}"
                                                 alt="icon" />
                                             <span>Change Promo Code</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{ route('checkout') }}">
-                                            <img src="{{ asset('frontend/images/icons/orders.svg') }}" alt="icon" />
+                                            <img src="{{ asset('assets/images/icons/orders.svg') }}" alt="icon" />
                                             <span>Checkout</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="faq.html">
-                                            <img src="{{ asset('frontend/images/icons/faq.svg') }}" alt="icon" />
+                                            <img src="{{ asset('assets/images/icons/faq.svg') }}" alt="icon" />
                                             <span>Frequent Questions</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="{{ asset('frontend/images/icons/chat.svg') }}" alt="icon" />
+                                            <img src="{{ asset('assets/images/icons/chat.svg') }}" alt="icon" />
                                             <span>Chat with us</span>
                                         </a>
                                     </li>
@@ -114,7 +114,7 @@
                 <!-- logo -->
                 <div class="logo text-center">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('frontend/images/logo.png') }}" class="img-fluid" width="120"
+                        <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" width="120"
                             alt="logo" />
                     </a>
                 </div>

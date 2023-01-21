@@ -26,10 +26,12 @@
         {{-- content section  --}}
         @yield('content')
 
+        @if(!Route::is('photos'))
         {{-- footer section  --}}
         <footer class="footer_section">
             @include('frontend.layouts.footer')
         </footer>
+        @endif
 
         {{-- javascript  --}}
         @include('frontend.layouts.script')

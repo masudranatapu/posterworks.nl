@@ -21,7 +21,7 @@
                             <div class="signin_form p-5 bg-white">
                                 <div class="mb-5 text-center">
                                     <a href="{{ route('home') }}">
-                                        <img src="{{ asset('frontend/images/logo.png') }}" width="150" alt="logo">
+                                        <img src="{{ asset('assets/images/logo.png') }}" width="150" alt="logo">
                                     </a>
                                 </div>
                                 <div class="mb-3">
