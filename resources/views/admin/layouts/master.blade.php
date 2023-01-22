@@ -16,7 +16,7 @@
         @stack('style')
 
     </head>
-    <body>
+    <body class="hold-transition sidebar-mini">
         {{-- header area  --}}
         @include('admin.layouts.header')
         {{-- sidebar area  --}}
