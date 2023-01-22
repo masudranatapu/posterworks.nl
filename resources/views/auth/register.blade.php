@@ -55,12 +55,12 @@
                                     <label for="password_confirmation" class="form-label">Confirm Password</label>
                                     <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password" required>
                                 </div>
-                                <div class="divider mb-4 mt-4 text-center">
+                                {{-- <div class="divider mb-4 mt-4 text-center">
                                     <span>Or</span>
                                 </div>
                                 <!-- social login -->
                                 <div class="social_auth text-center mb-3">
-                                    <a href="{{ route('google.redirect') }}" class="fb_login me-3">
+                                    <a href=" #" class="fb_login me-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28"
                                             height="28" viewBox="0 0 48 48">
                                             <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993"
@@ -76,7 +76,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a href="{{ route('google.redirect') }}" class="google_login">
+                                    <a href="#" class="google_login">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28"
                                             height="28" viewBox="0 0 48 48">
                                             <path fill="#FFC107"
@@ -93,7 +93,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
+                                </div> --}}
                                 <div class="create_account text-center">
                                     <p>Already have an accoutn? <a href="{{ route('login') }}">Sign In</a></p>
                                 </div>

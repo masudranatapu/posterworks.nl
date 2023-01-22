@@ -79,15 +79,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('faq') }}">
+                                        <a href="faq.html">
                                             <img src="{{ asset('assets/images/icons/faq.svg') }}" alt="icon" />
                                             <span>Frequent Questions</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('review') }}">
-                                            <img src="{{ asset('assets/images/icons/reviewimage.svg') }}" alt="icon" />
-                                            <span>Review</span>
                                         </a>
                                     </li>
                                     <li>

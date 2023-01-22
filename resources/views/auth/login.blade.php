@@ -24,9 +24,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">{{ __('Email') }}</label>
-                                    <input type="email" name="email" id="email"
-                                        class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ old('email') }}" placeholder="Enter your email" required>
+                                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Enter your email" required>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -35,20 +33,18 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password"name="password" id="password"
-                                        class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="Enter your password" required>
+                                    <input type="password"name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" required>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="divider mb-4 mt-4 text-center">
+                                {{-- <div class="divider mb-4 mt-4 text-center">
                                     <span>Or</span>
-                                </div>
-                                <div class="social_auth text-center mb-3">
-                                    <a href="{{ route('facebook.redirect') }}" class="fb_login me-3">
+                                </div> --}}
+                                {{-- <div class="social_auth text-center mb-3">
+                                    <a href=" #" class="fb_login me-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28"
                                             height="28" viewBox="0 0 48 48">
                                             <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993"
@@ -64,7 +60,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a href="{{ route('google.redirect') }}" class="google_login">
+                                    <a href="#" class="google_login">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28"
                                             height="28" viewBox="0 0 48 48">
                                             <path fill="#FFC107"
@@ -81,7 +77,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                </div>
+                                </div> --}}
                                 <div class="create_account text-center">
                                     @if (Route::has('register'))
                                         <p>Don't have an accoutn? <a href="{{ route('register') }}">Sign Up</a></p>

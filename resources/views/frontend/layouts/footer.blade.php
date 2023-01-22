@@ -21,7 +21,6 @@
                             @endauth
                             <li><a href="{{ route('faq') }}">Faq</a></li>
                             <li><a href="{{ route('photos') }}">Frame Photo</a></li>
-                            <li><a href="{{ route('review') }}">Review</a></li>
                         </ul>
                     </div>
                 </div>

@@ -6,11 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Http\Request;
-use Validator;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -62,48 +57,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-
-    public function reviewLogin(Request $request)
-    {
-        $validation = Validator::make($request->all(), [
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-
-        if($validation->passes()){
-
-            $user = User::where('email', $request->email)->where('role_id', 2)->first();
-
-            if($user) {
-
-                if(Hash::check($request->password, $user->password)) {
-
-                    Auth::login($user);
-                    $result = 3;
-                    return response()->json(['success' => 'You are successfully login.', 'result' => $result]);
-
-                }else {
-                    $result = 2;
-                    return response()->json(['success' => 'Password not match. Please try again', 'result' => $result]);
-
-                }
-
-            }else {
-
-                $result = 1;
-                return response()->json(['success' => 'User not found', 'result' => $result]);
-
-            }
-
-        }else {
-
-            $result = 0;
-            return response()->json(['errors' => $validation->errors()->all(), 'result' => $result]);
-
-        }
-
     }
 }

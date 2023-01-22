@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-// Auth
-use App\Http\Controllers\Auth\SocialLoginRegisterController;
-use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\HomeController;
 // admin
@@ -30,19 +27,9 @@ Route::get('buy-gift-card', [HomeController::class, 'buyGiftCard'])->name('buy.g
 Route::get('privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy.policy');
 Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('terms.condition');
 Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
-Route::get('review', [HomeController::class, 'review'])->name('review');
-Route::post('review-reivew', [HomeController::class, 'reviewStore'])->name('review.store');
 Route::get('photos', [PhotoController::class, 'photos'])->name('photos');
 
 Auth::routes();
-Route::post('review/login', [LoginController::class, 'reviewLogin'])->name('review.login');
-
-// google login
-Route::get('google/redirect', [SocialLoginRegisterController::class, 'googleRedirect'])->name('google.redirect');
-Route::get('login-register/google/callback', [SocialLoginRegisterController::class, 'googleCallback'])->name('google.callback');
-// facebook login
-Route::get('facebook/redirect', [SocialLoginRegisterController::class, 'facebookRedirect'])->name('facebook.redirect');
-Route::get('login-register/facebook/callback', [SocialLoginRegisterController::class, 'facebookCallback'])->name('facebook.callback');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
