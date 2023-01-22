@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
 
-        {{-- meta info --}}
-        @yield('meta')
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
 
-        {{-- style  --}}
-        @include('frontend.layouts.style')
+    {{-- meta info --}}
+    @yield('meta')
 
-        {{-- toastr style  --}}
-        {{-- <link rel="stylesheet" href="{{asset('massage/toastr/toastr.css')}}"> --}}
+    {{-- style  --}}
+    @include('frontend.layouts.style')
 
-        {{-- custom style  --}}
-        @stack('style')
+    {{-- toastr style  --}}
+    {{-- <link rel="stylesheet" href="{{asset('massage/toastr/toastr.css')}}"> --}}
 
-    </head>
-    <body>
+    {{-- custom style  --}}
+    @stack('style')
 
-        {{-- header section  --}}
-        @include('frontend.layouts.header')
+</head>
 
-        {{-- content section  --}}
-        @yield('content')
+<body>
 
-        @if(!Route::is('photos'))
+    {{-- header section  --}}
+    @include('frontend.layouts.header')
+
+    {{-- content section  --}}
+    @yield('content')
+
+    @if (!Route::is('photos'))
         {{-- footer section  --}}
         <footer class="footer_section">
             @include('frontend.layouts.footer')
         </footer>
-        @endif
+    @endif
 
-        {{-- javascript  --}}
-        @include('frontend.layouts.script')
+    {{-- javascript  --}}
+    @include('frontend.layouts.script')
 
-        {{-- <script src="{{asset('massage/toastr/toastr.js')}}"></script>
+    {{-- <script src="{{asset('massage/toastr/toastr.js')}}"></script>
         {!! Toastr::message() !!}
         <script>
-            @if($errors->any())
-                @foreach($errors->all() as $error)
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
                     toastr.error('{{ $error }}','Error',{
                         closeButton:true,
                         progressBar:true,
@@ -49,8 +51,9 @@
             @endif
         </script> --}}
 
-        {{-- custom js area  --}}
-        @stack('script')
+    {{-- custom js area  --}}
+    @stack('script')
 
-    </body>
+</body>
+
 </html>
