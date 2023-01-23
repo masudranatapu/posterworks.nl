@@ -17,18 +17,20 @@
 
     </head>
     <body class="hold-transition sidebar-mini">
-        {{-- header area  --}}
-        @include('admin.layouts.header')
-        {{-- sidebar area  --}}
-        @include('admin.layouts.sidebar')
-        {{-- main content  --}}
-        @yield('content')
-        {{-- footer  --}}
-        @include('admin.layouts.footer')
+        <div class="wrapper">
+            {{-- header area  --}}
+            @include('admin.layouts.header')
+            {{-- sidebar area  --}}
+            @include('admin.layouts.sidebar')
+            {{-- main content  --}}
+            @yield('content')
+            {{-- footer  --}}
+            @include('admin.layouts.footer')
 
-        {{-- javascript  --}}
-        @include('admin.layouts.script')
+            {{-- javascript  --}}
+            @include('admin.layouts.script')
 
+        </div>
         {{-- toastr javascript --}}
         <script src="{{asset('massage/toastr/toastr.js')}}"></script>
         {!! Toastr::message() !!}
