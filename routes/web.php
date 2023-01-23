@@ -29,9 +29,24 @@ Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('
 Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('photos', [PhotoController::class, 'photos'])->name('photos');
 
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['namespace' => 'Auth', 'middleware' => ['auth']], function () {
+    Route::get('delete-account',['as'=>'user.delete-account','uses'=>'AuthController@getDeactivationForm']);
+    Route::get('change-password',['as'=>'user.change-password','uses'=>'AuthController@getChangePassword']);
+    Route::post('change-password/update',['as'=>'user.change-password.update','uses'=>'AuthController@putChangePassword']);
+    Route::get('settings',['as'=>'dashboard','uses'=>'DashboardController@index']);
+    Route::get('profile', ['as'=>'profile','uses'=>'DashboardController@profile']);
+});
+Route::get('cards', 'CardController@index')->name('cards');
+Route::get('card/trash', 'CardController@getTrashList')->name('card.trash');
+Route::get('card/edit/{card_id}', 'CardController@edit')->name('card.edit');
+Route::get('card/delete/{card_id}', 'CardController@delete')->name('card.delete');
+Route::get('card/change-status/{card_id}', 'CardController@changeStatus')->name('card.change-status');
+Route::get('card/active/{card_id}', 'CardController@activeCard')->name('card.active');
 
 
 Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth', 'user']], function () {
