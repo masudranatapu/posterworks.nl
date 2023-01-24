@@ -27,7 +27,7 @@
                         <div class="card-header">
                             <div class="col">
                                 <div class="float-left">
-                                    <a href="{{ route('admin.users') }}" class="@yield('user_list')"><i class="fa fa-user"></i> {{ __('All Users') }}</a>  |
+                                    <a href="{{ route('admin.user.index') }}" class="@yield('user_list')"><i class="fa fa-user"></i> {{ __('All Users') }}</a>  |
                                     <a href="{{ route('admin.user.trash-list') }}" class="@yield('trash_list')"> <i class="fa fa-trash-alt"></i> {{ __('Trash list')}}</a>
                                 </div>
                             </div>

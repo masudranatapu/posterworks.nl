@@ -76,7 +76,8 @@ Route::get('plan/{id}/{period}/getpaypal', 'PlanController@createPaypalPlan')->n
 Route::get('delete-plan', 'PlanController@deletePlan')->name('delete.plan');
 
     // Users
-    Route::get('users', 'UserController@users')->name('users');
+    Route::get('user', 'UserController@index')->name('user.index');
+
     Route::get('edit-user/{id}', 'UserController@editUser')->name('edit.user');
     Route::post('update-user', 'UserController@updateUser')->name('update.user');
     Route::get('view-user/{id}', 'UserController@viewUser')->name('view.user');

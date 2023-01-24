@@ -71,7 +71,7 @@
                         </div>
                     </li>
                     <li class="nav-item @yield('users')">
-                        <a class="nav-link" href="{{ route('admin.users') }}">
+                        <a class="nav-link" href="{{ route('admin.user.index') }}">
                             <i class="fa fa-user-alt"></i> &nbsp;
                             <span class="nav-link-title">
                                 {{ __('Users') }}

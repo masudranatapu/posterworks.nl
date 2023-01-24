@@ -54,3 +54,5 @@ Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth', 'use
     Route::get('/profile', [UserDashboardController::class, 'index'])->name('dashboard');
 
 });
+
+

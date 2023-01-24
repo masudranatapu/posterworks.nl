@@ -1,4 +1,5 @@
 {{-- header  --}}
+
 <header class="header_section section sticky-top">
     <!-- container-fluid -->
     <div class="container-fluid">
@@ -28,11 +29,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
+
                         <div class="offcanvas-body">
                             <div class="offcanvas_menu">
                                 <div class="header">
                                     @auth
-                                        <div class="d-flex position-relative align-items-center d-none">
+                                        <div class="d-flex position-relative align-items-center">
                                             <img src="{{ asset('assets/images/default-user.png') }}" width="50"
                                                 alt="image">
                                             <div class="user_info">
