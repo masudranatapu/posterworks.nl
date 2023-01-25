@@ -9,7 +9,7 @@
 @php
     $row = $data;
     $tabindex = 1;
-    
+
 @endphp
 @section('content')
     <div class="content-wrapper">
@@ -38,7 +38,7 @@
                                 <h5 class="m-0">{{ $row->title }}</h5>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('admin.custom-page.update', $row->id) }}" method="post"
+                                <form action="{{ route('admin.cpage.update', $row->id) }}" method="post"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -169,7 +169,7 @@
                                     <div class="row">
                                         <div class="col-md-12 mb-3">
                                             <div class="form-actions text-center">
-                                                <a href="{{ route('admin.custom-page.list') }}"
+                                                <a href="{{ route('admin.cpage.index') }}"
                                                     class="btn btn-warning mr-1"><i class="ft-x"></i>
                                                     {{ __('Cancel') }}</a>
                                                 <button type="submit" class="btn bg-primary bg-darken-1 text-white">

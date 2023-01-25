@@ -49,7 +49,7 @@ $userr = Auth::user();
                                             <th>{{ __('name') }}</th>
                                             <th>{{ __('email') }}</th>
                                             <th>{{ __('roles') }}</th>
-                                            @if ($userr->can('admin.user.edit') || $userr->can('admin.user.delete'))
+                                            @if (Auth::user()->can('admin.user.edit') || Auth::user()->can('admin.user.delete'))
                                                 <th width="10%">{{ __('action') }}</th>
                                             @endif
                                         </tr>
@@ -66,8 +66,14 @@ $userr = Auth::user();
                                                     @endforeach
                                                 </td>
                                                 <td>
+                                                    @if (Auth::user()->can('admin.user.edit'))
+
                                                     <a href="{{ route('admin.user.edit', $user->id) }}" class="btn bg-info"><i
                                                             class="fas fa-edit"></i></a>
+
+                                                    @endif
+
+                                                    @if ( Auth::user()->can('admin.user.delete'))
                                                     <form action="{{ route('admin.user.destroy', $user->id) }}" method="POST"
                                                         class="d-inline">
                                                         @method('DELETE')
@@ -76,6 +82,7 @@ $userr = Auth::user();
                                                             onclick="return confirm('{{ __('are_you_sure_want_to_delete_this_item') }}');"
                                                             class="btn bg-danger"><i class="fas fa-trash"></i></button>
                                                     </form>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @empty

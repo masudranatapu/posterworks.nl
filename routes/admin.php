@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
+
 
 
 /*
@@ -18,21 +19,29 @@ use App\Http\Controllers\Admin\RolesController;
 
 
 
+//====================Admin Authentication=========================
 
- Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'], 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
+Route::get('admin/login',[AdminLoginController::class, 'showLoginForm'])->name('login.admin');
+Route::post('admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
+Route::get('admin/logout',[AdminLoginController::class, 'logout'])->name('admin.logout');
 
 
-    Route::get('dashboard', ['as'=>'dashboard','uses'=>'DashboardController@index']);
+ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth:admin'], 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
+
+
+    Route::get('/', ['as'=>'dashboard','uses'=>'DashboardController@index']);
+    Route::get('/cc', ['as'=>'cacheClear','uses'=>'DashboardController@cacheClear']);
     Route::get('settings', ['as'=>'settings','uses'=>'SettingsController@settings']);
 
     //Custom Page
-    Route::get('custom-page',['as'=>'custom-page.list','uses'=>'CustomPageController@getIndex']);
-    Route::get('custom-page/create',['as'=>'custom-page.create','uses'=>'CustomPageController@getCreate']);
-    Route::post('custom-page/store',['as'=>'custom-page.store','uses'=>'CustomPageController@postStore']);
-    Route::get('custom-page/{id}/edit',['as'=>'custom-page.edit','uses'=>'CustomPageController@getEdit']);
-    Route::get('custom-page/{id}/view',['as'=>'custom-page.view','uses'=>'CustomPageController@getView']);
-    Route::post('custom-page/{id}/update',['as'=>'custom-page.update','uses'=>'CustomPageController@putUpdate']);
-    Route::get('custom-page/{id}/delete',['as'=>'custom-page.delete','uses'=>'CustomPageController@getDelete']);
+    Route::get('cpage/index',['as'=>'cpage.index','uses'=>'CustomPageController@index']);
+    Route::get('cpage/create',['as'=>'cpage.create','uses'=>'CustomPageController@create']);
+    Route::post('cpage/id/store',['as'=>'cpage.store','uses'=>'CustomPageController@store']);
+    Route::get('cpage/{id}/edit',['as'=>'cpage.edit','uses'=>'CustomPageController@edit']);
+    Route::get('cpage/{id}/view',['as'=>'cpage.view','uses'=>'CustomPageController@view']);
+    Route::post('cpage/{id}/update',['as'=>'cpage.update','uses'=>'CustomPageController@update']);
+    Route::get('cpage/{id}/delete',['as'=>'cpage.delete','uses'=>'CustomPageController@delete']);
+
     Route::get('ajax/text-editor/image',['as'=>'text-editor.image','uses'=>'CustomPageController@postEditorImageUpload']);
 
 

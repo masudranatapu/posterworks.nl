@@ -2,16 +2,29 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use App\Actions\Role\CreateRole;
+use App\Actions\Role\UpdateRole;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
 
 class RolesController extends Controller
 {
+    use ValidatesRequests;
+    public $user;
+
     function __construct()
     {
-
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::guard('admin')->user();
+            return $next($request);
+        });
     }
 
 
@@ -35,8 +48,10 @@ class RolesController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::get();
-        return view('admin.roles.create', compact('permissions'));
+        $permissions = Permission::all();
+        $permission_groups = Admin::getPermissionGroup();
+
+        return view('admin.roles.create', compact('permissions','permission_groups'));
     }
 
     /**
@@ -47,16 +62,28 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|unique:roles,name',
-            'permission' => 'required',
-        ]);
+        // $this->validate($request, [
+        //     'name' => 'required|unique:roles,name',
+        //     'permission' => 'required',
+        // ]);
 
-        $role = Role::create(['name' => $request->get('name')]);
-        $role->syncPermissions($request->get('permission'));
+        DB::beginTransaction();
+        try {
+            CreateRole::create($request);
 
-        return redirect()->route('admin.roles.index')
-                        ->with('success','Role created successfully');
+            // flashSuccess('Role Created Successfully');
+
+        } catch (\Throwable $th) {
+            dd($th);
+            // flashError($th->getMessage());
+            DB::rollback();
+            return back();
+        }
+
+        DB::commit();
+        return back();
+        // return redirect()->route('admin.roles.index')
+        //                 ->with('success','Role created successfully');
     }
 
     /**
@@ -82,11 +109,11 @@ class RolesController extends Controller
     public function edit($id)
     {
         $role = Role::find($id);
+        $permissions = Permission::all();
+        $permission_groups = Admin::getPermissionGroup();
 
-        $rolePermissions = $role->permissions->pluck('name')->toArray();
-        $permissions = Permission::get();
 
-        return view('admin.roles.edit', compact('role', 'rolePermissions', 'permissions'));
+        return view('admin.roles.edit', compact('role', 'permission_groups', 'permissions'));
     }
 
     /**
@@ -96,19 +123,26 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Role $role, Request $request)
+    public function update(Request $request,$id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'permission' => 'required',
-        ]);
 
-        $role->update($request->only('name'));
+        // if (is_null($this->user) || !$this->user->can('role.edit')) {
+        //     abort(403, 'Sorry !! You are Unauthorized to delete any role.');
+        // }
 
-        $role->syncPermissions($request->get('permission'));
+        DB::beginTransaction();
+        try {
+            $role = Role::find($id);
+            UpdateRole::update($request, $role);
 
-        return redirect()->route('admin.roles.index')
-                        ->with('success','Role updated successfully');
+        } catch (\Throwable $th) {
+            flashError($th->getMessage());
+            DB::rollback();
+            return back();
+        }
+        DB::commit();
+
+        return redirect()->route('admin.roles.index')->with('success','Role updated successfully');
     }
 
     /**
@@ -117,8 +151,11 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
+
+        $role = Role::find($id);
+
         $role->delete();
 
         return redirect()->route('admin.roles.index')

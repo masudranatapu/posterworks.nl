@@ -4,29 +4,45 @@ use App\Models\CustomPage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
+
 class CustomPageController extends Controller
 {
+    // protected $page;
+    // public function __construct(
+    //     CustomPage $page
+    // )
+    // {
+    //     $this->page     = $page;
+    // }
+
+
+    public $user;
     protected $page;
-    public function __construct(
-        CustomPage $page
-    )
+    public function __construct(CustomPage $page)
     {
         $this->page     = $page;
+
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::guard('admin')->user();
+            return $next($request);
+        });
     }
 
-    public function getIndex(Request $request){
+
+    public function index(Request $request){
         $this->resp = $this->page->getPaginatedList($request);
 
 
         return view('admin.custom-page.index')->withData($this->resp->data);
     }
 
-     public function getCreate(){
+     public function create(){
         $data = [];
         return view('admin.custom-page.create')->withData($data);
     }
 
-    public function postStore(Request $request)
+    public function store(Request $request)
     {
         $this->resp = $this->page->postStore($request);
         if (!$this->resp->status) {
@@ -38,8 +54,13 @@ class CustomPageController extends Controller
     }
 
 
-    public function getEdit(Request $request, $id)
+    public function edit(Request $request, $id)
     {
+
+        if (is_null($this->user) || !$this->user->can('admin.cpage.edit')) {
+            abort(403, 'Sorry !! You are Unauthorized.');
+        }
+
           $this->resp = $this->page->getShow($id);
           if (!$this->resp->status) {
             return redirect()->back()->with($this->resp->redirect_class, $this->resp->msg);
@@ -47,7 +68,7 @@ class CustomPageController extends Controller
         return view('admin.custom-page.edit')->withData($this->resp->data);
     }
 
-    public function putUpdate (Request $request, $id)
+    public function update (Request $request, $id)
     {
         $this->resp = $this->page->putUpdate ($request, $id);
         if (!$this->resp->status) {

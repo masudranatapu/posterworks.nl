@@ -18,7 +18,7 @@ class CustomPage extends Model
     public function getPaginatedList($request, int $per_page = 20)
     {
         $data = $this->orderBy('order_id','DESC')->paginate($per_page);
-        return $this->formatResponse(true, '', 'admin.custom-page.list', $data);
+        return $this->formatResponse(true, '', 'admin.cpage.index', $data);
     }
     public function getShow(int $id)
     {
@@ -26,7 +26,7 @@ class CustomPage extends Model
         if (!empty($data)) {
             return $this->formatResponse(true, 'Data found', 'admin.custom-page.edit', $data);
         }
-        return $this->formatResponse(false, 'Did not found data !', 'admin.custom-page.list', null);
+        return $this->formatResponse(false, 'Did not found data !', 'admin.cpage.index', null);
     }
 
     public function postStore($request)
@@ -58,7 +58,7 @@ class CustomPage extends Model
             return $this->formatResponse(false, 'Unable to create page !', 'admin.custom-page.create');
         }
         DB::commit();
-        return $this->formatResponse(true, 'page has been created successfully !', 'admin.custom-page.list',$page->PK_NO);
+        return $this->formatResponse(true, 'page has been created successfully !', 'admin.cpage.index',$page->PK_NO);
     }
 
      public function putUpdate($request)
@@ -93,7 +93,7 @@ class CustomPage extends Model
             return $this->formatResponse(false, 'Unable to create page !', 'admin.custom-page.edit',$request->id);
         }
         DB::commit();
-        return $this->formatResponse(true, 'page has been updated !', 'admin.custom-page.list',$page->PK_NO);
+        return $this->formatResponse(true, 'page has been updated !', 'admin.cpage.index',$page->PK_NO);
     }
 
     public function getDelete(int $id)
@@ -108,10 +108,10 @@ class CustomPage extends Model
             dd($e->getMessage());
 
             DB::rollback();
-            return $this->formatResponse(false, 'Unable to delete page !', 'admin.custom-page.list');
+            return $this->formatResponse(false, 'Unable to delete page !', 'admin.cpage.index');
         }
         DB::commit();
-        return $this->formatResponse(true, 'Successfully delete page !', 'admin.custom-page.list');
+        return $this->formatResponse(true, 'Successfully delete page !', 'admin.cpage.index');
     }
 
 

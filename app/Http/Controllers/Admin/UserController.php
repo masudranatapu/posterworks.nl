@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Plan;
-use App\Models\Role;
-use App\Models\User;
+use App\Models\Admin;
 use App\Models\Setting;
 use App\Models\Transaction;
 use App\Models\BusinessCard;
 use Illuminate\Http\Request;
 use App\Models\BusinessField;
 use App\Mail\SendEmailInvoice;
-use App\Models\Admin;
+use App\Actions\User\UpdateUser;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +46,7 @@ class UserController extends Controller
     {
 
 
-        $users = Admin::where('user_type', '2')->SimplePaginate(10);
+        $users = Admin::SimplePaginate(10);
 
         return view('admin.users.index', compact('users'));
     }
@@ -54,7 +54,7 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
-        $users = User::where('user_type', '2')->orderBy('created_at', 'desc')->where('status','!=',2);
+        $users = Admin::where('user_type', '2')->orderBy('created_at', 'desc')->where('status','!=',2);
         if($request->date){
             $users->whereDate('created_at','=',date('Y-m-d', strtotime($request->date)));
         }
@@ -66,7 +66,7 @@ class UserController extends Controller
     }
 
 
-    public function store(User $user, StoreUserRequest $request)
+    public function store(Admin $user, StoreUserRequest $request)
     {
         //For demo purposes only. When creating user or inviting a user
         // you should create a generated random password and email it to the user
@@ -75,12 +75,12 @@ class UserController extends Controller
             'user_type' => '2'
         ]));
 
-        return redirect()->route('admin.users.index')->withSuccess(__('User created successfully.'));
+        return redirect()->route('admin.user.index')->withSuccess(__('User created successfully.'));
     }
 
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = Admin::find($id);
 
         return view('admin.users.edit', [
             'user' => $user,
@@ -91,16 +91,30 @@ class UserController extends Controller
 
     public function update($id, UpdateUserRequest $request)
     {
-        $user = User::find($id);
-        $user->update($request->validated());
-        $user->syncRoles($request->get('role'));
-        return redirect()->route('admin.users.index') ->withSuccess(__('User updated successfully.'));
+        // if (is_null($this->user) || !$this->user->can('admin.edit')) {
+        //     abort(403, 'Sorry !! You are Unauthorized to update users.');
+        // }
+
+        DB::beginTransaction();
+        try {
+            $user = Admin::find($id);
+            UpdateUser::update($request, $user);
+
+        } catch (\Throwable $th) {
+
+            // dd($th);
+            DB::rollBack();
+            return back();
+        }
+
+        DB::commit();
+        return redirect()->route('admin.user.index') ->withSuccess(__('User updated successfully.'));
     }
 
     // View User
     public function viewUser(Request $request, $id)
     {
-        $user_details = User::where('id', $id)->first();
+        $user_details = Admin::where('id', $id)->first();
         if ($user_details == null) {
             return view('errors.404');
         } else {
@@ -113,7 +127,7 @@ class UserController extends Controller
     // Edit User
     public function editUser(Request $request, $id)
     {
-        $user_details = User::where('id', $id)->first();
+        $user_details = Admin::where('id', $id)->first();
         $settings = Setting::where('status', 1)->first();
         if ($user_details == null) {
             return view('errors.404');
@@ -133,7 +147,7 @@ class UserController extends Controller
             'full_name' => 'required',
             'email' => 'required'
         ]);
-        $user = User::where('id', $request->user_id)->first();
+        $user = Admin::where('id', $request->user_id)->first();
         $user->email = $request->email;
         $user->name = $request->full_name;
         if(!empty($request->password)){
@@ -180,7 +194,7 @@ class UserController extends Controller
     // Change user plan
     public function ChangeUserPlan(Request $request, $id)
     {
-        $user_details = User::where('id', $id)->first();
+        $user_details = Admin::where('id', $id)->first();
         $plans = Plan::where('status', 1)->get();
         $settings = Setting::where('status', 1)->first();
         $config = DB::table('config')->get();
@@ -195,7 +209,7 @@ class UserController extends Controller
     public function UpdateUserPlan(Request $request)
     {
         $config = DB::table('config')->get();
-        $user_details = User::where('id', $request->user_id)->first();
+        $user_details = Admin::where('id', $request->user_id)->first();
         // dd($user_details);
         $plan_data = Plan::where('plan_id', $request->plan_id)->first();
         $term_days = $plan_data->validity;
@@ -256,7 +270,7 @@ class UserController extends Controller
             $transaction->payment_status = "SUCCESS";
             $transaction->save();
 
-            User::where('id', $user_details->id)->update([
+            Admin::where('id', $user_details->id)->update([
                 'plan_id' => $request->plan_id,
                 'term' => $term_days,
                 'plan_validity' => $plan_validity,
@@ -369,7 +383,7 @@ class UserController extends Controller
             $transaction->payment_status = "SUCCESS";
             $transaction->save();
 
-            User::where('id', $user_details->id)->update([
+            Admin::where('id', $user_details->id)->update([
                 'plan_id' => $request->plan_id,
                 'term' => $term_days,
                 'plan_validity' => $plan_validity,
@@ -408,13 +422,13 @@ class UserController extends Controller
     // Update status
     public function updateStatus(Request $request)
     {
-        $user_details = User::where('id', $request->query('id'))->first();
+        $user_details = Admin::where('id', $request->query('id'))->first();
         if ($user_details->status == 0) {
             $status = 1;
         } else {
             $status = 0;
         }
-        User::where('id', $request->query('id'))->update(['status' => $status]);
+        Admin::where('id', $request->query('id'))->update(['status' => $status]);
         Toastr::success(trans('User Status Updated Successfully!'), 'Success', ["positionClass" => "toast-top-center"]);
         return redirect()->route('admin.users');
     }
@@ -422,7 +436,7 @@ class UserController extends Controller
     // Delete User
     public function deleteUser(Request $request)
     {
-        $user = User::where('id', $request->query('id'))->first();
+        $user = Admin::where('id', $request->query('id'))->first();
         if($user->is_delete==1){
             $user_cards = BusinessCard::where('user_id', $user->id)->get();
             foreach ($user_cards as $key => $value) {
@@ -430,7 +444,7 @@ class UserController extends Controller
             }
             Transaction::where('user_id', $user->id)->delete();
             BusinessCard::where('user_id', $user->id)->delete();
-            User::where('id', $user->id)->delete();
+            Admin::where('id', $user->id)->delete();
         }else{
             $user_cards = BusinessCard::where('user_id', $user->id)->get();
             foreach ($user_cards as $key => $value) {
@@ -459,7 +473,7 @@ class UserController extends Controller
     // Login As User
     public function authAs(Request $request, $id)
     {
-        $user_details = User::where('id', $id)->where('status', 1)->first();
+        $user_details = Admin::where('id', $id)->where('status', 1)->first();
         if (isset($user_details)) {
             Auth::loginUsingId($user_details->id);
             return redirect()->route('dashboard');
@@ -470,7 +484,7 @@ class UserController extends Controller
 
     public function getTrashList()
     {
-        $users = User::where('user_type', '2')->orderBy('deleted_at', 'desc')->where('status',2)->get();
+        $users = Admin::where('user_type', '2')->orderBy('deleted_at', 'desc')->where('status',2)->get();
 
         $settings = Setting::where('status', 1)->first();
         $config = DB::table('config')->get();
@@ -481,13 +495,13 @@ class UserController extends Controller
 
     public function activeStatus(Request $request,$id)
     {
-        $user = User::findOrFail($id);
+        $user = Admin::findOrFail($id);
         if(empty($user)){
             Toastr::error(trans('Account not found !'), 'Success', ["positionClass" => "toast-top-center"]);
             return redirect()->back();
         }
         $trim_email = trim($user->email,$user->id.'-');
-        $check_exist = User::where('email',$trim_email)->where('id','!=',$user->id)->first();
+        $check_exist = Admin::where('email',$trim_email)->where('id','!=',$user->id)->first();
         if(!empty($check_exist)){
             Toastr::error(trans('Already have an account by this email address !'), 'Success', ["positionClass" => "toast-top-center"]);
             return redirect()->back();

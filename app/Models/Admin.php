@@ -15,7 +15,7 @@ class Admin extends Authenticatable
 {
     use HasFactory, Notifiable, HasRoles;
 
-    protected $table = 'users';
+    protected $table = 'admins';
     protected $guard = 'admin';
 
     /**
@@ -67,17 +67,17 @@ class Admin extends Authenticatable
         return $permissions;
     }
 
-    // public static function roleHasPermission($role, $permissions)
-    // {
-    //     $hasPermission = true;
-    //     foreach ($permissions as $permission) {
-    //         if (!$role->hasPermissionTo($permission->name)) {
-    //             $hasPermission = false;
-    //             return $hasPermission;
-    //         }
-    //     }
-    //     return $hasPermission;
-    // }
+    public static function roleHasPermission($role, $permissions)
+    {
+        $hasPermission = true;
+        foreach ($permissions as $permission) {
+            if (!$role->hasPermissionTo($permission->name)) {
+                $hasPermission = false;
+                return $hasPermission;
+            }
+        }
+        return $hasPermission;
+    }
 
 
     /**

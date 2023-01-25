@@ -157,7 +157,7 @@
                             <a href="#" class="dropdown-item @yield('transaction')">{{ __('Transactions') }}</a>
                             <a href="{{ route('admin.pages') }}"
                                 class="dropdown-item @yield('page')">{{ __('Pages') }}</a>
-                            <a href="{{ route('admin.custom-page.list') }}"
+                            <a href="{{ route('admin.cpage.index') }}"
                                 class="dropdown-item @yield('custom_page_list')">{{ __('Custom Pages') }}</a>
                             <a href="#" class="dropdown-item @yield('faq')">{{ __('Faqs') }}</a>
                             <a href="#" class="dropdown-item @yield('social_icon')">{{ __('Social Icon') }}</a>

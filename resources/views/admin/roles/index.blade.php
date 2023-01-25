@@ -65,9 +65,17 @@
                                               <a class="btn btn-primary btn-sm" href="{{ route('admin.roles.edit', $role->id) }}">Edit</a>
                                           </td>
                                           <td>
-                                              {!! Form::open(['method' => 'DELETE','route' => ['admin.roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                                              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
-                                              {!! Form::close() !!}
+
+
+                                              <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST"
+                                                class="d-inline">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button
+                                                    onclick="return confirm('Are you sure you want to delete this item?');"
+                                                    class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+
                                           </td>
                                       </tr>
                                       @endforeach

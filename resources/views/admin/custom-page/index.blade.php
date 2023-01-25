@@ -64,9 +64,19 @@ $rows = $data;
                                             </td>
                                             <td>{{ $row->order_id }}</td>
                                             <td style="width: 150px;">
-                                                {{-- <a href="{{ route('admin.custom-page.view', [$row->id]) }}" class="btn btn-sm btn-success" title="EDIT"><i class="la la-edit"></i> View</a> --}}
-                                                <a href="{{ route('admin.custom-page.edit', [$row->id]) }}" class="btn btn-sm btn-info" title="EDIT"><i class="la la-edit"></i> {{ __('Edit')}}</a>
-                                                <a href="{{ route('admin.custom-page.delete', [$row->id]) }}" class="btn btn-sm btn-danger " onclick="return confirm('Are you sure you want to delete?')" title="DELETE"><i class="la la-trash"></i> {{ __('Delete')}}</a>
+
+                                                @if (Auth::user()->can('admin.cpage.view'))
+                                                <a href="{{ route('admin.cpage.view', [$row->id]) }}" class="btn btn-xs btn-success" title="EDIT"><i class="la la-edit"></i> View</a>
+                                                @endif
+
+                                                @if (Auth::user()->can('admin.cpage.edit'))
+                                                <a href="{{ route('admin.cpage.edit', [$row->id]) }}" class="btn btn-xs btn-info" title="EDIT"><i class="la la-edit"></i> {{ __('Edit')}}</a>
+                                                @endif
+
+                                                @if (Auth::user()->can('admin.cpage.delete'))
+                                                <a href="{{ route('admin.cpage.delete', [$row->id]) }}" class="btn btn-xs btn-danger " onclick="return confirm('Are you sure you want to delete?')" title="DELETE"><i class="la la-trash"></i> {{ __('Delete')}}</a>
+                                                @endif
+
                                             </td>
                                         </tr>
                                         @endforeach

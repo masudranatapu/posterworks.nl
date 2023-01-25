@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('admin-user', 'active')
-@section('title') Admin| User Create @endsection
+@section('title') Admin| Role Create @endsection
 
 @push('style')
 @endpush
@@ -12,13 +12,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">{{ __('Admin user create') }}</h1>
+                        <h1 class="m-0">{{ __('Admin role create') }}</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
-                            <li class="breadcrumb-item active">{{ __('Admin user create') }}</li>
+                            <li class="breadcrumb-item active">{{ __('Admin role create') }}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,18 +30,18 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="m-0">{{ __('Admin user create') }}
+                                <h5 class="m-0">{{ __('Admin role create') }}
                                     <span class="float-right">
-                                    <a href="{{ route('admin.user.create') }}" class="btn btn-sm btn-primary"> <= back</a>
+                                    <a href="{{ route('admin.roles.index') }}" class="btn btn-sm btn-primary"> <= back</a>
                                     </span>
                                 </h5>
                             </div>
                             <div class="card-body">
 
-                                <form method="POST" action="{{ route('admin.user.store') }}">
+                                <form method="POST" action="{{ route('admin.roles.store') }}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
+                                        <label for="name" class="form-label">Role Name</label>
                                         <input value="{{ old('name') }}"
                                             type="text"
                                             class="form-control"
@@ -52,16 +52,57 @@
                                             <span class="text-danger text-left">{{ $errors->first('name') }}</span>
                                         @endif
                                     </div>
+
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input value="{{ old('email') }}"
-                                            type="email"
-                                            class="form-control"
-                                            name="email"
-                                            placeholder="Email address" required>
-                                        @if ($errors->has('email'))
-                                            <span class="text-danger text-left">{{ $errors->first('email') }}</span>
-                                        @endif
+
+                                       <div class="row">
+                                           <div class="col-3">
+                                            <div class="custom-control custom-checkbox">
+                                            <input value="1" type="checkbox" class="custom-control-input" name="permission_all" id="permission_all" />
+                                            <label for="permission_all" class="custom-control-label text-capitalize">All Permission</label>
+                                           </div>
+                                           </div>
+                                       </div>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        @php $i=1; @endphp
+                                        @foreach ($permission_groups as $group)
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox"
+                                                            id="{{ $i }}management"
+                                                            onclick="CheckPermissionByGroup('role-{{ $i }}-management-checkbox',this)"
+                                                            value="2">
+                                                        <label for="{{ $i }}management" class="custom-control-label text-capitalize">{{ __($group->name) }}</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-9 role-{{ $i }}-management-checkbox">
+                                                    @php
+                                                        $permissionss = App\Models\Admin::getpermissionsByGroupName($group->name);
+                                                        $j = 1;
+                                                    @endphp
+                                                    @foreach ($permissionss as $permission)
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input name="permissions[]" class="custom-control-input"
+                                                                type="checkbox"
+                                                                id="permission_checkbox_{{ $permission->id }}"
+                                                                value="{{ __($permission->name) }}">
+                                                            <label for="permission_checkbox_{{ $permission->id }}" class="custom-control-label">{{ __($permission->name) }}</label>
+                                                        </div>
+                                                        @php $j++; @endphp
+                                                    @endforeach
+                                                </div>
+
+                                            </div>
+                                            <hr>
+                                            @php $i++; @endphp
+                                        @endforeach
+
+
                                     </div>
                                     {{-- <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
@@ -91,5 +132,32 @@
     </div>
 @endsection
 
+
+
 @push('script')
+    <script>
+        $('#permission_all').click(function() {
+            if ($(this).is(':checked')) {
+                // check all the checkbox
+                $('input[type=checkbox]').prop('checked', true);
+            } else {
+                // uncheck all the checkbox
+                $('input[type=checkbox]').prop('checked', false);
+            }
+        });
+
+        // check permission by group
+        function CheckPermissionByGroup(classname, checkthis) {
+            const groupIdName = $("#" + checkthis.id);
+            const classCheckBox = $('.' + classname + ' input');
+            if (groupIdName.is(':checked')) {
+                // check all the checkbox
+                classCheckBox.prop('checked', true);
+            } else {
+                // uncheck all the checkbox
+                classCheckBox.prop('checked', false);
+            }
+        }
+    </script>
 @endpush
+

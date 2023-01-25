@@ -40,7 +40,7 @@ $tabindex = 1;
                             </div>
                             <div class="col">
                                 <div class="float-end">
-                                    <a href="{{route('admin.custom-page.list')}}" class="btn btn-primary">{{ __('Back')}}</a>
+                                    <a href="{{route('admin.cpage.index')}}" class="btn btn-primary">{{ __('Back')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ $tabindex = 1;
                             <div class="card-body">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-lg-9">
-                                        <form action="{{ route('admin.custom-page.store') }}" method="post" enctype="multipart/form-data">
+                                        <form action="{{ route('admin.cpage.store') }}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 mb-3">
@@ -164,7 +164,7 @@ $tabindex = 1;
                                             <div class="row">
                                                 <div class="col-md-12 mb-3">
                                                     <div class="form-actions text-center">
-                                                        <a href="{{route('admin.custom-page.list')}}" class="btn btn-warning mr-1"><i class="ft-x"></i> {{ __('Cancel')}}</a>
+                                                        <a href="{{route('admin.cpage.index')}}" class="btn btn-warning mr-1"><i class="ft-x"></i> {{ __('Cancel')}}</a>
                                                         <button type="submit" class="btn bg-primary bg-darken-1 text-white">
                                                         <i class="la la-check-square-o"></i> {{ __('Save')}} </button>
                                                     </div>
