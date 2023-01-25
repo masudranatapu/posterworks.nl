@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Plan;
+use App\Models\Role;
 use App\Models\User;
 use App\Models\Setting;
 use App\Models\Transaction;
@@ -11,12 +12,15 @@ use App\Models\BusinessCard;
 use Illuminate\Http\Request;
 use App\Models\BusinessField;
 use App\Mail\SendEmailInvoice;
+use App\Models\Admin;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -40,6 +44,16 @@ class UserController extends Controller
     // All Users
     public function index(Request $request)
     {
+
+
+        $users = Admin::where('user_type', '2')->SimplePaginate(10);
+
+        return view('admin.users.index', compact('users'));
+    }
+
+
+    public function create(Request $request)
+    {
         $users = User::where('user_type', '2')->orderBy('created_at', 'desc')->where('status','!=',2);
         if($request->date){
             $users->whereDate('created_at','=',date('Y-m-d', strtotime($request->date)));
@@ -48,9 +62,40 @@ class UserController extends Controller
         $settings = Setting::where('status', 1)->first();
         $config = DB::table('config')->get();
 
-        return view('admin.user.index', compact('users', 'settings', 'config'));
+        return view('admin.users.create', compact('users', 'settings', 'config'));
     }
 
+
+    public function store(User $user, StoreUserRequest $request)
+    {
+        //For demo purposes only. When creating user or inviting a user
+        // you should create a generated random password and email it to the user
+        $user->create(array_merge($request->validated(), [
+            'password' => 'test',
+            'user_type' => '2'
+        ]));
+
+        return redirect()->route('admin.users.index')->withSuccess(__('User created successfully.'));
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+
+        return view('admin.users.edit', [
+            'user' => $user,
+            'roles' => Role::latest()->get()
+        ]);
+    }
+
+
+    public function update($id, UpdateUserRequest $request)
+    {
+        $user = User::find($id);
+        $user->update($request->validated());
+        $user->syncRoles($request->get('role'));
+        return redirect()->route('admin.users.index') ->withSuccess(__('User updated successfully.'));
+    }
 
     // View User
     public function viewUser(Request $request, $id)

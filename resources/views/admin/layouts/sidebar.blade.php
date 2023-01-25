@@ -18,6 +18,9 @@
           <li class="nav-item"><a href="{{ route('admin.settings') }}" class="nav-link @yield('settings')"><i class="fa fa-gear"></i> {{ __('Settings') }}</a></li>
           <li class="nav-item"><a href="{{ route('admin.custom-page.list') }}" class="nav-link @yield('custom-page')"><i class=" fa fa-book"></i> {{ __('Custom page') }}</a></li>
           <li class="nav-item"><a href="{{ route('admin.user.index') }}" class="nav-link @yield('admin-user')"><i class=" fa fa-book"></i> {{ __('Admin User') }}</a></li>
+          <li class="nav-item"><a href="{{ route('admin.roles.index') }}" class="nav-link @yield('admin-roles')"><i class=" fa fa-book"></i> {{ __('Admin Roles') }}</a></li>
+          <li class="nav-item"><a href="{{ route('admin.permissions.index') }}" class="nav-link @yield('admin-permissions')"><i class=" fa fa-book"></i> {{ __('Admin permissions') }}</a></li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
