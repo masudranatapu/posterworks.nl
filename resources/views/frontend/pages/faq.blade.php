@@ -1,12 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('title')
-    Frequent Questions
-@endsection
+@section('title') {{ $data['title'] ?? 'Page header' }} @endsection
 
-@push('style')
-
-@endpush
+@push('style') @endpush
 
 @section('content')
     <!--  faq  -->
@@ -14,27 +10,28 @@
         <div class="container">
             <div class="row">
                 <div class="section_title mb-4">
-                    <h5>Frequent Questions</h5>
+                    <h5>{{ $data['title'] ?? 'Page header' }}</h5>
                 </div>
                 <div class="faq_question_wrap">
                     <div class="accordion" id="accordionExample">
+
+                        @foreach ($data['faqs'] as $key => $row)
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header" id="heading_{{ $key }}">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is Lorem Ipsum?
+                                    data-bs-target="#collapse_{{ $key }}" aria-expanded="true" aria-controls="collapse_{{ $key }}">
+                                   {{ $row->title }}
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            <div id="collapse_{{ $key }}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}" aria-labelledby="heading_{{ $key }}"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nostrum
-                                        similique officia quasi modi laborum maiores soluta. Quam accusamus quo
-                                        asperiores vero illo fuga cupiditate aperiam necessitatibus. Voluptas, iusto
-                                        nisi.</p>
+                                    <p>{{ $row->body }}</p>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+{{--
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -102,7 +99,7 @@
                                         nisi.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

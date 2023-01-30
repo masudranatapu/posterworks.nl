@@ -1,11 +1,13 @@
+@php
+$settings = getSetting();
+@endphp
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() ?? 'en' }}">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            PosterWorks - Sign In
-        </title>
+        <title>{{ $settings->site_name }}</title>
         @include('frontend.layouts.style')
     </head>
     <body>
@@ -19,7 +21,7 @@
                             <div class="signin_form p-5 bg-white">
                                 <div class="mb-5 text-center">
                                     <a href="{{ route('home') }}">
-                                        <img src="{{ asset('assets/images/logo.png') }}" width="150" alt="logo">
+                                        <img src="{{ getLogo($settings->site_logo) }}" width="150" alt="logo">
                                     </a>
                                 </div>
                                 <div class="mb-3">
@@ -32,7 +34,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Admin Password</label>
+                                    <label for="password" class="form-label">{{ __('Admin Password') }}</label>
                                     <input type="password"name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" required>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -40,22 +42,9 @@
                                         </span>
                                     @enderror
                                 </div>
-
-                                {{-- <div class="create_account text-center">
-                                    @if (Route::has('register'))
-                                        <p>Don't have an accoutn? <a href="{{ route('register') }}">Sign Up</a></p>
-                                    @endif
-                                </div> --}}
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                            <button type="submit" class="btn btn-primary w-100">{{ __('Sign In') }}</button>
 
-                            {{-- <div class="create_account text-center mt-2">
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div> --}}
                         </form>
                     </div>
                 </div>

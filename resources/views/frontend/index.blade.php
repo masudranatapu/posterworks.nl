@@ -1,12 +1,12 @@
+
+@php
+$settings = getSetting();
+@endphp
+
 @extends('frontend.layouts.app')
+@section('title') {{ $settings->site_name ?? 'Page header' }} @endsection
 
-@section('title')
-    Home
-@endsection
-
-@section('meta')
-
-@endsection
+@section('meta') @endsection
 
 @push('style')
 

@@ -33,45 +33,44 @@ class SettingsController extends Controller
     // Setting
     public function settings()
     {
-        $timezonelist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
-        $currencies = Currency::get();
-        $settings = Setting::first();
-        $config = DB::table('config')->get();
+        $data['title']  = 'Settings';
+        $timezonelist   = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+        $currencies     = Currency::get();
+        $settings       = Setting::first();
+        $config         = DB::table('config')->get();
 
         $email_configuration = [
-            'driver' => env('MAIL_MAILER', 'smtp'),
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'address' => env('MAIL_FROM_ADDRESS'),
-            'name' => env('MAIL_FROM_NAME', $settings->site_name),
+            'driver'        => env('MAIL_MAILER', 'smtp'),
+            'host'          => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port'          => env('MAIL_PORT', 587),
+            'username'      => env('MAIL_USERNAME'),
+            'password'      => env('MAIL_PASSWORD'),
+            'encryption'    => env('MAIL_ENCRYPTION', 'tls'),
+            'address'       => env('MAIL_FROM_ADDRESS'),
+            'name'          => env('MAIL_FROM_NAME', $settings->site_name),
         ];
 
         $google_configuration = [
-            'GOOGLE_ENABLE' => env('GOOGLE_ENABLE', ''),
-            'GOOGLE_CLIENT_ID' => env('GOOGLE_CLIENT_ID', ''),
-            'GOOGLE_CLIENT_SECRET' => env('GOOGLE_CLIENT_SECRET', ''),
-            'GOOGLE_REDIRECT' => env('GOOGLE_REDIRECT', '')
+            'GOOGLE_ENABLE'         => env('GOOGLE_ENABLE', ''),
+            'GOOGLE_CLIENT_ID'      => env('GOOGLE_CLIENT_ID', ''),
+            'GOOGLE_CLIENT_SECRET'  => env('GOOGLE_CLIENT_SECRET', ''),
+            'GOOGLE_REDIRECT'       => env('GOOGLE_REDIRECT', '')
         ];
 
-        $image_limit = [
-            'SIZE_LIMIT' => env('SIZE_LIMIT', '')
-        ];
+
 
         $recaptcha_configuration = [
-            'RECAPTCHA_ENABLE' => env('RECAPTCHA_ENABLE', ''),
-            'RECAPTCHA_SITE_KEY' => env('RECAPTCHA_SITE_KEY', ''),
-            'RECAPTCHA_SECRET_KEY' => env('RECAPTCHA_SECRET_KEY', '')
+            'RECAPTCHA_ENABLE'      => env('RECAPTCHA_ENABLE', ''),
+            'RECAPTCHA_SITE_KEY'    => env('RECAPTCHA_SITE_KEY', ''),
+            'RECAPTCHA_SECRET_KEY'  => env('RECAPTCHA_SECRET_KEY', '')
         ];
 
-        $settings['email_configuration'] = $email_configuration;
-        $settings['google_configuration'] = $google_configuration;
-        $settings['recaptcha_configuration'] = $recaptcha_configuration;
-        $settings['image_limit'] = $image_limit;
+        $settings['email_configuration']        = $email_configuration;
+        $settings['google_configuration']       = $google_configuration;
+        $settings['recaptcha_configuration']    = $recaptcha_configuration;
 
-        return view('admin.settings', compact('settings', 'timezonelist', 'currencies', 'config'));
+
+        return view('admin.settings', compact('data','settings', 'timezonelist', 'currencies', 'config'));
     }
 
     // Update Setting

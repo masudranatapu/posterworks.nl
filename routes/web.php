@@ -23,9 +23,10 @@ use App\Http\Controllers\User\UserDashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
-Route::get('buy-gift-card', [HomeController::class, 'buyGiftCard'])->name('buy.gift.card');
-Route::get('privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy.policy');
-Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('terms.condition');
+Route::get('buy-gift-card', [HomeController::class, 'buyGiftCard'])->name('buy-gift-card');
+Route::get('privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('terms-condition');
+Route::get('contact-us', [HomeController::class, 'contactUs'])->name('contact-us');
 Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('photos', [PhotoController::class, 'photos'])->name('photos');
 

@@ -1,11 +1,14 @@
+@php
+$settings = getSetting();
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            PosterWorks - Sign Up
-        </title>
+        <title>{{ $settings->site_name }}</title>
         <!-- favicon -->
         <link rel="icon" href="assets/images/favicon.png" />
         @include('frontend.layouts.style')
@@ -21,11 +24,11 @@
                             <div class="signin_form p-5 bg-white">
                                 <div class="mb-5 text-center">
                                     <a href="{{ route('home') }}">
-                                        <img src="{{ asset('assets/images/logo.png') }}" width="150" alt="logo">
+                                        <img src="{{ getLogo($settings->site_logo) }}" width="150" alt="logo">
                                     </a>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
+                                    <label for="name" class="form-label">{{ __('Name') }}</label>
                                     <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Enter your name" required>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -34,7 +37,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label">{{ __('Email') }}</label>
                                     <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Enter your email" required>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -43,7 +46,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
+                                    <label for="password" class="form-label">{{ __('Password') }}</label>
                                     <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" required>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -52,7 +55,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                    <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
                                     <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password" required>
                                 </div>
                                 {{-- <div class="divider mb-4 mt-4 text-center">
@@ -95,10 +98,10 @@
                                     </a>
                                 </div> --}}
                                 <div class="create_account text-center">
-                                    <p>Already have an accoutn? <a href="{{ route('login') }}">Sign In</a></p>
+                                    <p>{{ __('Already have an accoutn?') }} <a href="{{ route('login') }}">{{ __('Sign In') }}</a></p>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                            <button type="submit" class="btn btn-primary w-100">{{ __('Sign Up') }}</button>
                         </form>
                     </div>
                 </div>

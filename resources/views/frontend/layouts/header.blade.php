@@ -22,7 +22,7 @@
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" width="120"
+                                    <img src="{{ getLogo($settings->site_logo) }}" class="img-fluid" width="120"
                                         alt="logo" />
                                 </a>
                             </h5>
@@ -35,7 +35,7 @@
                                 <div class="header">
                                     @auth
                                         <div class="d-flex position-relative align-items-center">
-                                            <img src="{{ asset('assets/images/default-user.png') }}" width="50"
+                                            <img src="{{ getProfile($settings->site_logo) }}" width="50"
                                                 alt="image">
                                             <div class="user_info">
                                                 <h5>{{ Auth::user()->name }}</h5>
@@ -46,11 +46,8 @@
                                             </div>
                                         </div>
                                     @else
-                                        <p>
-                                            <strong>Sign Up</strong>
-                                            to save your progress & track orders
-                                        </p>
-                                        <a href="{{ route('login') }}" class="btn btn-primary">Sign up / Sign in</a>
+                                        <p><strong>{{ __('Sign Up') }}</strong>to save your progress & track orders</p>
+                                        <a href="{{ route('login') }}" class="btn btn-primary">{{ __('Sign up') }} / {{ __('Sign in') }}</a>
                                     @endauth
                                 </div>
                                 <ul>
@@ -61,7 +58,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('buy.gift.card') }}">
+                                        <a href="{{ route('buy-gift-card') }}">
                                             <img src="{{ asset('assets/images/icons/gift.svg') }}" alt="icon" />
                                             <span>Buy a Gift Card</span>
                                         </a>
@@ -81,9 +78,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="faq.html">
+                                        <a href="{{ route('faq') }}">
                                             <img src="{{ asset('assets/images/icons/faq.svg') }}" alt="icon" />
-                                            <span>Frequent Questions</span>
+                                            <span>{{ __('Frequent Questions') }}</span>
                                         </a>
                                     </li>
                                     <li>
@@ -96,13 +93,13 @@
                                         <hr>
                                     </div>
                                     <li class="ps-1">
-                                        <a href="{{ route('privacy.policy') }}">
-                                            <span>Privacy Policy</span>
+                                        <a href="{{ route('privacy-policy') }}">
+                                            <span>{{ __('Privacy Policy') }}</span>
                                         </a>
                                     </li>
                                     <li class="ps-1">
-                                        <a href="{{ route('terms.condition') }}">
-                                            <span>Terms & Conditons</span>
+                                        <a href="{{ route('terms-condition') }}">
+                                            <span>{{ __('Terms & Conditons') }}</span>
                                         </a>
                                     </li>
                                 </ul>

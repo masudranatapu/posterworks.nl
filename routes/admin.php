@@ -29,7 +29,7 @@ Route::get('admin/logout',[AdminLoginController::class, 'logout'])->name('admin.
  Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth:admin'], 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
 
 
-    Route::get('/', ['as'=>'dashboard','uses'=>'DashboardController@index']);
+    Route::get('/', ['as'=>'dashboard','uses'=>'DashboardController@dashboard']);
     Route::get('/cc', ['as'=>'cacheClear','uses'=>'DashboardController@cacheClear']);
     Route::get('settings', ['as'=>'settings','uses'=>'SettingsController@settings']);
 
@@ -43,6 +43,17 @@ Route::get('admin/logout',[AdminLoginController::class, 'logout'])->name('admin.
     Route::get('cpage/{id}/delete',['as'=>'cpage.delete','uses'=>'CustomPageController@delete']);
 
     Route::get('ajax/text-editor/image',['as'=>'text-editor.image','uses'=>'CustomPageController@postEditorImageUpload']);
+
+
+    //Faq
+    Route::get('faq/index',['as'=>'faq.index','uses'=>'FaqController@index']);
+    Route::get('faq/create',['as'=>'faq.create','uses'=>'FaqController@create']);
+    Route::post('faq/id/store',['as'=>'faq.store','uses'=>'FaqController@store']);
+    Route::get('faq/{id}/edit',['as'=>'faq.edit','uses'=>'FaqController@edit']);
+    Route::get('faq/{id}/view',['as'=>'faq.view','uses'=>'FaqController@view']);
+    Route::post('faq/{id}/update',['as'=>'faq.update','uses'=>'FaqController@update']);
+    Route::get('faq/{id}/delete',['as'=>'faq.delete','uses'=>'FaqController@delete']);
+
 
 
     // Account Setting
