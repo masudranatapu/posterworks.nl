@@ -27,27 +27,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected $redirectTo;
+    // protected $redirectTo;
 
-    protected function redirectTo() {
+    // protected function redirectTo() {
 
-        if(auth()->user()->role_id == 1 ) {
+    //     if(auth()->user()->role_id == 1 ) {
 
-            Toastr::success('Welcome to Admin Panel :-)','Success');
-            return route('admin.dashboard');
+    //         Toastr::success('Welcome to Admin Panel :-)','Success');
+    //         return route('admin.dashboard');
 
-        }elseif(auth()->user()->role_id == 2 ) {
+    //     }elseif(auth()->user()->role_id == 2 ) {
 
-            Toastr::success('Welcome to your profile :-)','Success');
-            return route('user.dashboard');
+    //         Toastr::success('Welcome to your profile :-)','Success');
+    //         return route('user.dashboard');
 
-        }else {
-            $this->redirectTo = route('login');
-        }
+    //     }else {
+    //         $this->redirectTo = route('login');
+    //     }
 
-    }
+    // }
 
     /**
      * Create a new controller instance.

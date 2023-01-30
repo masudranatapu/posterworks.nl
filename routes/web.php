@@ -49,7 +49,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Route::get('card/active/{card_id}', 'CardController@activeCard')->name('card.active');
 
 
-Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth', 'user']], function () {
+Route::group(['as' => 'user.', 'prefix' => 'user', 'middleware' => ['auth']], function () {
 
     Route::get('/profile', [UserDashboardController::class, 'index'])->name('dashboard');
 

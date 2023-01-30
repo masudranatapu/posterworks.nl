@@ -12,13 +12,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">{{ __('Custom page') }}</h1>
+                        <h1 class="m-0">{{ __('Settings') }}</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
-                            <li class="breadcrumb-item active">{{ __('Custom page') }}</li>
+                            <li class="breadcrumb-item active">{{ __('Settings') }}</li>
                         </ol>
                     </div>
                 </div>
@@ -30,33 +30,14 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="m-0">{{ __('Custom page list') }}</h5>
+                                <h5 class="m-0">{{ __('Settings list') }}</h5>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('admin.change.settings') }}" method="post"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
-                                        <div class="col-md-4 col-xl-4">
-                                            <div class="mb-3">
-                                                <label class="form-label required"
-                                                    for="app_type">{{ __('Application Type') }}</label>
-                                                <select name="app_type" id="app_type" class="form-control" required>
-                                                    <option value="VCARD"
-                                                        {{ $settings->application_type == 'VCARD' ? ' selected' : '' }}>
-                                                        {{ __('vCarv') }}</option>
-                                                    {{-- <option value="STORE"
-                                                      {{ $settings->application_type == 'STORE' ? ' selected' : '' }}>
-                                                  {{ __('WhatsApp Store Only') }}</option>
-                                                  <option value="BOTH"
-                                                      {{ $settings->application_type == 'BOTH' ? ' selected' : '' }}>
-                                                  {{ __('Both') }}</option> --}}
-                                                </select>
-                                                @error('app_type')
-                                                    <span class="help-block text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
+
                                         <div class="col-md-4 col-xl-4">
                                             <div class="mb-3">
                                                 <label class="form-label required"
