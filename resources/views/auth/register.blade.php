@@ -19,7 +19,7 @@ $settings = getSetting();
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-6 col-lg-5 col-xl-5">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('user-register') }}">
                             @csrf
                             <div class="signin_form p-5 bg-white">
                                 <div class="mb-5 text-center">

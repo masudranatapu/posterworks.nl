@@ -1,4 +1,7 @@
-{{-- header  --}}
+
+@php
+$settings = getSetting();
+@endphp
 
 <header class="header_section section sticky-top">
     <!-- container-fluid -->

@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
+use App\Models\User;
+
+
 
 class LoginController extends Controller
 {
@@ -28,6 +34,19 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+
+
+    public function __construct()
+    {
+        $this->middleware('guest:user')->except('logout');
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('user');
+    }
+
+
 
     // protected $redirectTo;
 
@@ -54,8 +73,26 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+
+
+    public function logout(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/');
     }
+
+
 }
+

@@ -14,6 +14,10 @@ class User extends Authenticatable
 
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
+    protected $guarded = [];
+
+    protected $guard = 'user';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -55,10 +59,10 @@ class User extends Authenticatable
      * @param $value
      * @return string
      */
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    // public function setPasswordAttribute($value)
+    // {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
 
     public function role()
     {

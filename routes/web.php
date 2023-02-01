@@ -29,6 +29,7 @@ Route::get('terms-condition', [HomeController::class, 'termsCondition'])->name('
 Route::get('contact-us', [HomeController::class, 'contactUs'])->name('contact-us');
 Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('photos', [PhotoController::class, 'photos'])->name('photos');
+Route::post('user-register', [HomeController::class, 'userRegister'])->name('user-register');
 
 
 Auth::routes();
